@@ -220,6 +220,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Methods\CustomMethod.cs" />
+    <Compile Include="Models\Entities\Admin.cs" />
+    <Compile Include="Models\Entities\BaseEntity.cs" />
+    <Compile Include="Models\Entities\Document.cs" />
+    <Compile Include="Models\Entities\EducationalAppeal.cs" />
+    <Compile Include="Models\Entities\JobAppeal.cs" />
+    <Compile Include="Models\Entities\SendEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -261,7 +267,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Context\" />
-    <Folder Include="Models\Entities\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
