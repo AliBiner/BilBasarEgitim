@@ -1,0 +1,258 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92A5A6F4-2C4B-4919-8CAF-047F983B6D6E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BilBasarEgitim</RootNamespace>
+    <AssemblyName>BilBasarEgitim</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44398</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\dropdown\css\style.css" />
+    <Content Include="assets\dropdown\js\navbar-dropdown.js" />
+    <Content Include="assets\embla\embla.min.js" />
+    <Content Include="assets\embla\script.js" />
+    <Content Include="assets\formoid\formoid.min.js" />
+    <Content Include="assets\images\32e94747-9d1b-4f35-bb23-eaab9c2d7357-898x1600.jpeg" />
+    <Content Include="assets\images\36b5d007-4b12-4514-a0c9-01c46c8c010d-1599x1200.jpg" />
+    <Content Include="assets\images\5723f5b1-d220-42dd-987a-7d5f7afb0a09-1537x2048.jpg" />
+    <Content Include="assets\images\7488a256-2e88-4107-b410-9828cfd736c1.jpg" />
+    <Content Include="assets\images\7c1c88b8-16c4-4b44-a93f-f02cbe662ddd-1071x1600.jpg" />
+    <Content Include="assets\images\7c1c88b8-16c4-4b44-a93f-f02cbe662ddd.jpg" />
+    <Content Include="assets\images\939a7571-d917-4270-bdfa-8ee53a9222a2-1600x1200.jpg" />
+    <Content Include="assets\images\af649129-e027-4c8e-82a7-33707d033992.jpg" />
+    <Content Include="assets\images\anasayfa-slayt-f706d77aad37aae.jpg" />
+    <Content Include="assets\images\back.png" />
+    <Content Include="assets\images\biyoloji-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\biyoloji-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\biyoloji-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\bvca.png" />
+    <Content Include="assets\images\corafya-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\corafya-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\corafya-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\corafya-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\corafya-modler-soru-bankas-9-snf-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\d0e46889-f94b-4a1c-ac62-bd723250347d.jpg" />
+    <Content Include="assets\images\ed27d4028c.jpg" />
+    <Content Include="assets\images\edebiyat-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\f6d656ca-b60f-4851-ba06-c3b11ff4df1b-2048x1537.jpg" />
+    <Content Include="assets\images\felsefe-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\felsefe-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\felsefe-grubu-ayt-modler-soru-bankas-800x600.jpg" />
+    <Content Include="assets\images\felsefe-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\fizik-modler-soru-bankas-10-snf-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\fizik-modler-soru-bankas-ayt-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\galeri-1ee707fdc4d805b-800x600.jpg" />
+    <Content Include="assets\images\galeri-4fb02f7305b5e4a-800x600.jpg" />
+    <Content Include="assets\images\galeri-63eaa7d055e578b-800x600.jpg" />
+    <Content Include="assets\images\galeri-6636a4cc8c64f2a-600x800.jpg" />
+    <Content Include="assets\images\galeri-abcf303531f6d00-800x600.jpg" />
+    <Content Include="assets\images\galeri-e129253313775d8-800x600.jpg" />
+    <Content Include="assets\images\galeri-e41fa76551667af-800x600.jpg" />
+    <Content Include="assets\images\geometri-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\img-20230725-wa0001-1-1131x1600.jpeg" />
+    <Content Include="assets\images\img-20230725-wa0002-1132x1600.jpeg" />
+    <Content Include="assets\images\img-20230725-wa0003-1131x1600.jpeg" />
+    <Content Include="assets\images\img-20230725-wa0004-1131x1600.jpeg" />
+    <Content Include="assets\images\img-20230725-wa0005-1131x1600.jpeg" />
+    <Content Include="assets\images\img-20230725-wa0006-1131x1600.jpeg" />
+    <Content Include="assets\images\img-20230725-wa0007-1132x1600.jpeg" />
+    <Content Include="assets\images\img-3258-1536x2048.jpg" />
+    <Content Include="assets\images\img-3278-1536x2048.jpg" />
+    <Content Include="assets\images\img-3278.jpeg" />
+    <Content Include="assets\images\img-3279.jpeg" />
+    <Content Include="assets\images\kimya-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\kimya-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\kimya-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\kimya-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\kimya-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\led-akilli-tahta.jpg" />
+    <Content Include="assets\images\logo1.png" />
+    <Content Include="assets\images\matemati-9-snf-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\matematik-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\maxresdefault-1071x602.jpg" />
+    <Content Include="assets\images\okullarimiz-6da81acd728b752-800x600.jpg" />
+    <Content Include="assets\images\okullarimiz-9420df31c8fa044-600x450.jpg" />
+    <Content Include="assets\images\slider-1-1900x1200.png" />
+    <Content Include="assets\images\slider2-1900x1200.png" />
+    <Content Include="assets\images\tarih-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\tarih-modler-soru-bankas-11-snf-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\tarih-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\team1.jpg" />
+    <Content Include="assets\images\team2.jpg" />
+    <Content Include="assets\images\team3.jpg" />
+    <Content Include="assets\images\team4.jpg" />
+    <Content Include="assets\images\trk-dili-ve-edebiyat-10-sinif-eitim-vadisi-soru-bankas-800x600.jpg" />
+    <Content Include="assets\images\trk-dili-ve-edebiyat-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\trk-dili-ve-edebiyat-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" />
+    <Content Include="assets\images\trke-tyt-modler-soru-bankas-eitim-vafisi-800x600.jpg" />
+    <Content Include="assets\images\web-sitesi-2.png" />
+    <Content Include="assets\mobirise\css\mbr-additional.css" />
+    <Content Include="assets\playervimeo\vimeo_player.js" />
+    <Content Include="assets\smoothscroll\smooth-scroll.js" />
+    <Content Include="assets\socicon\css\styles.css" />
+    <Content Include="assets\socicon\fonts\socicon.svg" />
+    <Content Include="assets\theme\css\style.css" />
+    <Content Include="assets\theme\js\script.js" />
+    <Content Include="assets\web\assets\mobirise-icons2\mobirise2.css" />
+    <Content Include="assets\web\assets\mobirise-icons2\mobirise2.svg" />
+    <Content Include="assets\ytplayer\index.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="assets\images\hashes.json" />
+    <Content Include="assets\socicon\fonts\socicon.eot" />
+    <Content Include="assets\socicon\fonts\socicon.ttf" />
+    <Content Include="assets\socicon\fonts\socicon.woff" />
+    <Content Include="assets\socicon\fonts\socicon.woff2" />
+    <Content Include="assets\web\assets\mobirise-icons2\mobirise2.eot" />
+    <Content Include="assets\web\assets\mobirise-icons2\mobirise2.ttf" />
+    <Content Include="assets\web\assets\mobirise-icons2\mobirise2.woff" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_AdminLayoutPage.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64981</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44398/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
