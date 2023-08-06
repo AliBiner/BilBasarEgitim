@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BilBasarEgitim.Methods;
+using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Models.Entities;
 using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
@@ -37,14 +38,13 @@ namespace BilBasarEgitim.Repositories.AdminRepository
             con.Close();
         }
 
-        public bool RegisterControl(string email)
+        public bool GetAll(string email)
         {
             con.Open();
-            string query = "select Email from admins where Email = @Email";
+            string query = "select * from admins";
             string id = null;
             using (MySqlCommand command = new MySqlCommand(query,con))
             {
-                command.Parameters.AddWithValue("Email", email);
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
@@ -64,6 +64,36 @@ namespace BilBasarEgitim.Repositories.AdminRepository
             {
                 con.Close();
                 return true;
+            }
+        }
+
+        public Admin LoginControl(string email, string password)
+        {
+            con.Open();
+            string query = "select Id,Email,FullName from admins where Email = @Email and Password = @Password";
+
+            using (MySqlCommand command = new MySqlCommand(query,con))
+            {
+                command.Parameters.AddWithValue("Email", email);
+                command.Parameters.AddWithValue("Password", password);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Admin admin = new Admin()
+                        {
+                            Id = reader.GetGuid("Id"),
+                            Email = reader.GetString("Email"),
+                            FullName = reader.GetString("FullName")
+                        };
+                        return admin;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
             }
         }
     }

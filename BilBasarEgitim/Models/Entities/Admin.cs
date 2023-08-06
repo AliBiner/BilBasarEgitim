@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BilBasarEgitim.Models.Entities
 {
-    public class Admin
+    public class Admin:BaseEntity
     {
         public Admin()
         {

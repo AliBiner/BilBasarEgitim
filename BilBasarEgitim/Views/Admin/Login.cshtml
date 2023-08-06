@@ -1,5 +1,4 @@
-﻿@model BilBasarEgitim.Models.Dtos.AdminRegisterDto
-
+﻿@model BilBasarEgitim.Models.Dtos.AdminLoginDto
 @{
     Layout = null;
 }
@@ -9,8 +8,8 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Kayıt Ol</title>
-    
+    <title>Giriş Yap</title>
+
     <link href="~/assets/img/favicon.png" rel="icon">
     <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -51,25 +50,20 @@
                                     <div class="card-body">
 
                                         <div class="pt-4 pb-2">
-                                            <h5 class="card-title text-center pb-0 fs-4">Kayıt Ol</h5>
-
+                                            <h5 class="card-title text-center pb-0 fs-4">Giriş Yap</h5>
                                         </div>
-                                        @using (Html.BeginForm("Register", "Admin", FormMethod.Post))
+                                        @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
                                         {
                                             <div  class="row g-3 needs-validation">
+                                                
 
                                                     <div class="col-12">
-                                                        <label for="yourName" class="form-label">Ad Soyad</label>
-                                                        <input type="text" name="FullName" class="form-control" id="yourName" required>
-                                                        <div class="invalid-feedback">Lütfen Tam Adınızı Giriniz.</div>
+                                                        <label for="yourUsername" class="form-label">Email</label>
+                                                        <div class="input-group has-validation">
+                                                            <input type="email" name="Email" class="form-control" id="yourUsername" required>
+                                                            <div class="invalid-feedback">Lütfen Email Adresi Giriniz.</div>
+                                                        </div>
                                                     </div>
-
-                                                    <div class="col-12">
-                                                        <label for="yourEmail" class="form-label">Email</label>
-                                                        <input type="email" name="Email" class="form-control" id="yourEmail" required>
-                                                        <div class="invalid-feedback">Lütfen Email Adresi Giriniz.</div>
-                                                    </div>
-
 
                                                     <div class="col-12">
                                                         <label for="yourPassword" class="form-label">Şifre</label>
@@ -77,21 +71,24 @@
                                                         <div class="invalid-feedback">Lütfen Şifre Giriniz.</div>
                                                     </div>
                                                     <div>
-                                                        <h6 style="color: red"> @ViewBag.Error</h6>
+                                                        <h6 style="color: red">
+                                                            @ViewBag.Error
+                                                        </h6>
                                                     </div>
                                                     <div class="col-12">
-                                                        <button class="btn btn-primary w-100" type="submit">Hesap Oluştur</button>
+                                                        <button class="btn btn-primary w-100" type="submit">Giriş Yap</button>
                                                     </div>
                                                     <div class="col-12">
-                                                        <p class="small mb-0">Zaten Hesabınız Var Mı? <a href="/GirisYap">Giriş Yap</a></p>
+                                                        <p class="small mb-0">Hesabınız Yok Mu? <a href="/KayitOl">Kayıt Ol</a></p>
                                                     </div>
+                                                
                                             </div>
-                                            
                                         }
-
+                                        
 
                                     </div>
                                 </div>
+
 
                             </div>
                         </div>
@@ -103,14 +100,14 @@
         </main><!-- End #main -->
     </div>
 
-<script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="~/assets/vendor/quill/quill.min.js"></script>
-<script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="~/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/quill/quill.min.js"></script>
+    <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
-<script src="~/assets/js/main.js"></script>
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
 </body>
 </html>

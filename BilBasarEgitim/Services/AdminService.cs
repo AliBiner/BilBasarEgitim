@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using BilBasarEgitim.Mappers;
 using BilBasarEgitim.Models.Dtos;
+using BilBasarEgitim.Models.Entities;
 using BilBasarEgitim.Repositories.AdminRepository;
 
 namespace BilBasarEgitim.Services
@@ -15,10 +16,10 @@ namespace BilBasarEgitim.Services
         {
             try
             {
-                var control = _adminRepository.RegisterControl(dto.Email);
+                var control = _adminRepository.GetAll(dto.Email);
                 if (control == true)
                 {
-                    return "Böyle Bir Email Zaten Kullanılmaktadır.";
+                    return "Zaten Sisteme Kayıtlı Bir Admin Bulunmaktadır.";
                 }
                 else
                 {
@@ -33,6 +34,36 @@ namespace BilBasarEgitim.Services
                 return "İşlem Hatası: " + " " + e.Message;
             }
            
+        }
+
+        public string Login(AdminLoginDto dto)
+        {
+            try
+            {
+                var model = _adminRepository.LoginControl(dto.Email, dto.Password);
+                if (model == null)
+                {
+                    return "Eposta veya Şifre Yanlış Olabilir";
+                }
+                else
+                {
+                    SetSession(model);
+                    return "İşlem Başarılı";
+
+                }
+            }
+            catch (Exception e)
+            {
+                return "İşlem Hatası: " + " " + e.Message;
+            }
+           
+        }
+
+        private void SetSession(Admin entity)
+        {
+            HttpContext.Current.Session["FullName"] = entity.FullName;
+            HttpContext.Current.Session["Email"] = entity.Email;
+            HttpContext.Current.Session["Id"] = entity.Id;
         }
     }
 }

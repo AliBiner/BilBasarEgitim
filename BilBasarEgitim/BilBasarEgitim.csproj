@@ -476,6 +476,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\CustomActionFilter.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -492,6 +493,7 @@
     </Compile>
     <Compile Include="Mappers\CustomMapper.cs" />
     <Compile Include="Methods\CustomMethod.cs" />
+    <Compile Include="Models\Dtos\AdminLoginDto.cs" />
     <Compile Include="Models\Dtos\AdminRegisterDto.cs" />
     <Compile Include="Models\Dtos\EducationalAppealAddDto.cs" />
     <Compile Include="Models\Dtos\JopAppealAddDto.cs" />
@@ -620,6 +622,7 @@
     <Content Include="Views\TrainingPublication\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
