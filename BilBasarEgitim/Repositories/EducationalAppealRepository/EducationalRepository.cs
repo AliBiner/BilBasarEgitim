@@ -12,7 +12,7 @@ namespace BilBasarEgitim.Repositories.EducationalAppealRepository
     {
         private readonly MySqlConnection _connection = new MySqlConnection(CustomMethod.ConnectionString());
 
-        void Add(EducationalAppeal entity)
+        public void Add(EducationalAppeal entity)
         {
             _connection.Open();
             string insertQuery = @"INSERT INTO EducationalAppeals

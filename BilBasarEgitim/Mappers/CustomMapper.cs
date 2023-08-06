@@ -25,5 +25,20 @@ namespace BilBasarEgitim.Mappers
                 JobExperience = dto.JobExperience
             };
         }
+
+        public static EducationalAppeal EducationalAppealAddDtoTo(EducationalAppealAddDto dto)
+        {
+            return new EducationalAppeal()
+            {
+                FullName = dto.FullName,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                EducationalField = dto.EducationalField,
+                ParentName = dto.ParentName,
+                ParentPhone = dto.ParentPhone,
+                SchoolName = dto.SchoolName,
+                Grade = dto.Grade
+            };
+        }
     }
 }

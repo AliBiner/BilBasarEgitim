@@ -16,9 +16,9 @@ namespace BilBasarEgitim.Repositories.JobAppealRepository
         {
             _connection.Open();
             string insertQuery = @"INSERT INTO JobAppeals
-                                  (Id, CreateDate, UpdateDate, DeleteDate, EducatioanlAppealCheck, FullName, Email, Phone, BirthDate, JobRole, Gender, MartialStatus, Nationality, GraduateSchool, JobExperience,CvUrl)
+                                  (Id, CreateDate, UpdateDate, DeleteDate, JobAppealCheck, FullName, Email, Phone, BirthDate, JobRole, Gender, MartialStatus, Nationality, GraduateSchool, JobExperience,CvUrl)
                                   VALUES
-                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @EducatioanlAppealCheck, @FullName, @Email, @Phone, @BirthDate, @JobRole, @Gender, @MartialStatus, @Nationality, @GraduateSchool, @JobExperience,@CvUrl)";
+                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @JobAppealCheck, @FullName, @Email, @Phone, @BirthDate, @JobRole, @Gender, @MartialStatus, @Nationality, @GraduateSchool, @JobExperience,@CvUrl)";
 
             using (MySqlCommand command = new MySqlCommand(insertQuery, _connection))
             {
@@ -26,7 +26,7 @@ namespace BilBasarEgitim.Repositories.JobAppealRepository
                 command.Parameters.AddWithValue("@CreateDate", CustomMethod.TurkeyTime());
                 command.Parameters.AddWithValue("@UpdateDate", DBNull.Value);
                 command.Parameters.AddWithValue("@DeleteDate", DBNull.Value);
-                command.Parameters.AddWithValue("@EducatioanlAppealCheck", true);
+                command.Parameters.AddWithValue("@JobAppealCheck", true);
                 command.Parameters.AddWithValue("@FullName", entity.FullName);
                 command.Parameters.AddWithValue("@Email", entity.Email);
                 command.Parameters.AddWithValue("@Phone", entity.Phone);
