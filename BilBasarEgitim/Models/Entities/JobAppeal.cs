@@ -13,7 +13,7 @@ namespace BilBasarEgitim.Models.Entities
         public string BirthDate { get; set; }
         public string JobRole { get; set; }
         public string Gender { get; set; }
-        public string MaritalStatus { get; set; }
+        public string MartialStatus { get; set; }
         public string Nationality { get; set; }
         public string GraduateSchool { get; set; }
         public string JobExperience { get; set; }
