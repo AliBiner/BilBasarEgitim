@@ -492,6 +492,7 @@
     </Compile>
     <Compile Include="Mappers\CustomMapper.cs" />
     <Compile Include="Methods\CustomMethod.cs" />
+    <Compile Include="Models\Dtos\AdminRegisterDto.cs" />
     <Compile Include="Models\Dtos\EducationalAppealAddDto.cs" />
     <Compile Include="Models\Dtos\JopAppealAddDto.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
@@ -504,6 +505,7 @@
     <Compile Include="Repositories\AdminRepository\AdminRepository.cs" />
     <Compile Include="Repositories\EducationalAppealRepository\EducationalRepository.cs" />
     <Compile Include="Repositories\JobAppealRepository\JobAppealRepository.cs" />
+    <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\EducationalAppealService.cs" />
     <Compile Include="Services\JobAppealService.cs" />
   </ItemGroup>

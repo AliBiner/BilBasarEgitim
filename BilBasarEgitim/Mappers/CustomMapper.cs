@@ -40,5 +40,15 @@ namespace BilBasarEgitim.Mappers
                 Grade = dto.Grade
             };
         }
+
+        public static Admin AdminRegisterDtoto(AdminRegisterDto dto)
+        {
+            return new Admin()
+            {
+                FullName = dto.FullName,
+                Email = dto.Email,
+                Password = dto.Password
+            };
+        }
     }
 }

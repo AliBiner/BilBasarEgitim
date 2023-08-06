@@ -14,6 +14,16 @@ namespace BilBasarEgitim
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "KayitOlRoute",
+                url: "KayitOl",
+                defaults: new { controller = "Admin", action = "Register", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "GirisYapRoute",
+                url: "GirisYap",
+                defaults: new { controller = "Admin", action = "Login", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
              name: "AnasayfaRoute",
              url: "Anasayfa",
              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
