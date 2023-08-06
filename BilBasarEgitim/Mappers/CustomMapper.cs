@@ -9,7 +9,7 @@ namespace BilBasarEgitim.Mappers
 {
     public class CustomMapper
     {
-        JobAppeal JobAppealAddDtoTo(JopAppealAddDto dto)
+        public static JobAppeal JobAppealAddDtoTo(JopAppealAddDto dto)
         {
             return new JobAppeal()
             {

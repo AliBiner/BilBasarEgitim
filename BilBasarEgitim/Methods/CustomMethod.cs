@@ -22,7 +22,7 @@ namespace BilBasarEgitim.Methods
             return turkeyTimeNow;
         }
 
-        public static string DocumentUpload(HttpPostedFile file)
+        public static string DocumentUpload(HttpPostedFileBase file)
         {
             string virtualPath = "~/Upload/Documents/" + Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
             string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);

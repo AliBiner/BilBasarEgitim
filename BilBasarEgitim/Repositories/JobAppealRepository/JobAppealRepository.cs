@@ -16,9 +16,9 @@ namespace BilBasarEgitim.Repositories.JobAppealRepository
         {
             _connection.Open();
             string insertQuery = @"INSERT INTO JobAppeals
-                                  (Id, CreateDate, UpdateDate, DeleteDate, EducatioanlAppealCheck, FullName, Email, Phone, BirthDate, JobRole, Gender, MartialStatus, Nationality, GraduateSchool, JobExperience)
+                                  (Id, CreateDate, UpdateDate, DeleteDate, EducatioanlAppealCheck, FullName, Email, Phone, BirthDate, JobRole, Gender, MartialStatus, Nationality, GraduateSchool, JobExperience,CvUrl)
                                   VALUES
-                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @EducatioanlAppealCheck, @FullName, @Email, @Phone, @BirthDate, @JobRole, @Gender, @MartialStatus, @Nationality, @GraduateSchool, @JobExperience)";
+                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @EducatioanlAppealCheck, @FullName, @Email, @Phone, @BirthDate, @JobRole, @Gender, @MartialStatus, @Nationality, @GraduateSchool, @JobExperience,@CvUrl)";
 
             using (MySqlCommand command = new MySqlCommand(insertQuery, _connection))
             {
@@ -37,9 +37,11 @@ namespace BilBasarEgitim.Repositories.JobAppealRepository
                 command.Parameters.AddWithValue("@Nationality", entity.Nationality);
                 command.Parameters.AddWithValue("@GraduateSchool", entity.GraduateSchool);
                 command.Parameters.AddWithValue("@JobExperience", entity.JobExperience);
+                command.Parameters.AddWithValue("@CvUrl", entity.CvUrl);
                 
                 command.ExecuteNonQuery();
             }
+            _connection.Close();
         }
     }
 }
