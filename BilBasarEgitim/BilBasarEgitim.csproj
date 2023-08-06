@@ -271,6 +271,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Methods\CustomMethod.cs" />
+    <Compile Include="Models\Dtos\JopAppealAddDto.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Document.cs" />
@@ -280,6 +281,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdminRepository\AdminRepository.cs" />
     <Compile Include="Repositories\JobAppealRepository\JobAppealRepository.cs" />
+    <Compile Include="Services\JobAppealService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

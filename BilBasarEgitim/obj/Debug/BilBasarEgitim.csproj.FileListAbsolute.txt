@@ -96,9 +96,6 @@ C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Memory.dll
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Numerics.Vectors.dll
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Threading.Tasks.Extensions.dll
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Unity.Abstractions.dll
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Unity.Container.dll
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Unity.Mvc5.dll
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\ZstdSharp.dll
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\BouncyCastle.Crypto.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Google.Protobuf.pdb
@@ -115,5 +112,3 @@ C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Memory.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Numerics.Vectors.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Threading.Tasks.Extensions.xml
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Unity.Abstractions.pdb
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Unity.Container.pdb
