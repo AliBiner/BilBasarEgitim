@@ -12,7 +12,6 @@ namespace BilBasarEgitim.Controllers
 {
     public class HumanResourcesController : Controller
     {
-        private readonly JobAppealService _appealService = new JobAppealService();
         // GET: HumanResources
         public ActionResult Index()
         {
@@ -21,6 +20,7 @@ namespace BilBasarEgitim.Controllers
         [HttpPost]
         public ActionResult Index(JopAppealAddDto dto,HttpPostedFileBase cv)
         {
+            JobAppealService _appealService = new JobAppealService();
             var result = _appealService.AddJobAppealWithCv(dto,cv);
             ViewBag.Error = result;
             return View();
