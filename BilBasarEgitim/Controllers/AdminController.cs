@@ -18,6 +18,7 @@ namespace BilBasarEgitim.Controllers
             return View();
         }
 
+
         public ActionResult Register()
         {
             return View();
@@ -40,8 +41,18 @@ namespace BilBasarEgitim.Controllers
         {
             AdminService adminService = new AdminService();
             var result = adminService.Login(dto);
-            ViewBag.Error = result;
-            return View();
+            if (result=="İşlem Başarılı")
+            {
+                return RedirectToAction("Index","Admin");
+            }
+            else
+            {
+                ViewBag.Error = result;
+                return View();
+            }
         }
+
+
+       
     }
 }

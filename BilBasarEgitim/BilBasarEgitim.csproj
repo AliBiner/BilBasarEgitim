@@ -480,7 +480,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AppealController.cs" />
+    <Compile Include="Controllers\AdminEducationApplyController.cs" />
+    <Compile Include="Controllers\AdminJobApplyController.cs" />
+    <Compile Include="Controllers\ApplyController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -495,21 +497,25 @@
     <Compile Include="Methods\CustomMethod.cs" />
     <Compile Include="Models\Dtos\AdminLoginDto.cs" />
     <Compile Include="Models\Dtos\AdminRegisterDto.cs" />
-    <Compile Include="Models\Dtos\EducationalAppealAddDto.cs" />
-    <Compile Include="Models\Dtos\JopAppealAddDto.cs" />
+    <Compile Include="Models\Dtos\EducationalApplyAddDto.cs" />
+    <Compile Include="Models\Dtos\EducationalApplyDetailDto.cs" />
+    <Compile Include="Models\Dtos\EducationalApplyPreviewDto.cs" />
+    <Compile Include="Models\Dtos\JobApplyDetailDto.cs" />
+    <Compile Include="Models\Dtos\JobApplyPreviewDto.cs" />
+    <Compile Include="Models\Dtos\JopApplyAddDto.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Document.cs" />
-    <Compile Include="Models\Entities\EducationalAppeal.cs" />
-    <Compile Include="Models\Entities\JobAppeal.cs" />
+    <Compile Include="Models\Entities\EducationalApply.cs" />
+    <Compile Include="Models\Entities\JobApply.cs" />
     <Compile Include="Models\Entities\SendEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdminRepository\AdminRepository.cs" />
-    <Compile Include="Repositories\EducationalAppealRepository\EducationalRepository.cs" />
-    <Compile Include="Repositories\JobAppealRepository\JobAppealRepository.cs" />
+    <Compile Include="Repositories\EducationalApplyRepository\EducationalApplyRepository.cs" />
+    <Compile Include="Repositories\JobApplylRepository\JobApplyRepository.cs" />
     <Compile Include="Services\AdminService.cs" />
-    <Compile Include="Services\EducationalAppealService.cs" />
-    <Compile Include="Services\JobAppealService.cs" />
+    <Compile Include="Services\EducationalApplyService.cs" />
+    <Compile Include="Services\JobApplyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -606,12 +612,11 @@
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_AdminLayoutPage.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\About\AcademicStaff.cshtml" />
     <Content Include="Views\About\Branches.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About\RoadMap.cshtml" />
-    <Content Include="Views\Appeal\Index.cshtml" />
+    <Content Include="Views\Apply\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -623,6 +628,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\AdminJobApply\JobApply.cshtml" />
+    <Content Include="Views\AdminJobApply\JobApplyDetail.cshtml" />
+    <Content Include="Views\AdminEducationApply\EducationalApply.cshtml" />
+    <Content Include="Views\AdminEducationApply\EducationalApplyDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

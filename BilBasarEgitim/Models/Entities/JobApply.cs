@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BilBasarEgitim.Models.Entities
 {
-    public class JobAppeal:BaseEntity
+    public class JobApply:BaseEntity
     {
         public string FullName { get; set; }
         public string Email { get; set; }

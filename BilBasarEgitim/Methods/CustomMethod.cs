@@ -24,11 +24,12 @@ namespace BilBasarEgitim.Methods
 
         public static string DocumentUpload(HttpPostedFileBase file)
         {
-            string virtualPath = "~/Upload/Documents/" + Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
+            string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
+            string virtualPath = "~/Upload/Documents/" + fileName;
             string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);
 
             file.SaveAs(physicalPath);
-            return virtualPath;
+            return fileName;
         }
     }
 }

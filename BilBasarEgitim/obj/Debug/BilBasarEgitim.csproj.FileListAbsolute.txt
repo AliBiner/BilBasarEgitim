@@ -65,7 +65,6 @@ C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Web.Webpage
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Web.Helpers.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Web.Mvc.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.csproj.AssemblyReference.cache
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.csproj.CoreCompileInputs.cache
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.csproj.CopyComplete
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.dll
@@ -112,3 +111,4 @@ C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Memory.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Numerics.Vectors.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.csproj.AssemblyReference.cache

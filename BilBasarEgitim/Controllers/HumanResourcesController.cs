@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Models.Entities;
-using BilBasarEgitim.Repositories.JobAppealRepository;
 using BilBasarEgitim.Services;
 
 namespace BilBasarEgitim.Controllers
@@ -18,10 +17,10 @@ namespace BilBasarEgitim.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(JopAppealAddDto dto,HttpPostedFileBase cv)
+        public ActionResult Index(JopApplyAddDto dto,HttpPostedFileBase cv)
         {
-            JobAppealService _appealService = new JobAppealService();
-            var result = _appealService.AddJobAppealWithCv(dto,cv);
+            JobApplyService applyService = new JobApplyService();
+            var result = applyService.AddJobAppealWithCv(dto,cv);
             ViewBag.Error = result;
             return View();
         }

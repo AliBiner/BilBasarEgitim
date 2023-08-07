@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BilBasarEgitim.Models.Dtos
 {
-    public class EducationalAppealAddDto
+    public class EducationalApplyAddDto
     {
         public string FullName { get; set; }
         public string Email { get; set; }

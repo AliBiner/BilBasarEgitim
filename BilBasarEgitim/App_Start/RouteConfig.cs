@@ -12,7 +12,48 @@ namespace BilBasarEgitim
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "EgitimBasvuruOnayRoute",
+                url: "Admin/EgitimBasvuru/Onay/{id}",
+                defaults: new { controller = "AdminEducationApply", action = "Approval", id = UrlParameter.Optional }
+            ); routes.MapRoute(
+                name: "EgitimBasvuruSilRoute",
+                url: "Admin/EgitimBasvuru/Sil/{id}",
+                defaults: new { controller = "AdminEducationApply", action = "Delete", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "EgitimBasvuruDetayRoute",
+                url: "Admin/EgitimBasvuru/Detay/{id}",
+                defaults: new { controller = "AdminEducationApply", action = "EducationalApplyDetail", id = UrlParameter.Optional }
+            );
 
+            routes.MapRoute(
+                name: "EgitimBasvuruRoute",
+                url: "Admin/EgitimBasvuru",
+                defaults: new { controller = "AdminEducationApply", action = "EducationalApply", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "DetayRoute",
+                url: "Admin/IsBasvuru/Detay/{id}",
+                defaults: new { controller = "AdminJobApply", action = "JobApplyDetail", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "OnaylaRoute",
+                url: "Admin/IsBasvuru/Onayla/{id}",
+                defaults: new { controller = "AdminJobApply", action = "Approval", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "ReddetRoute",
+                url: "Admin/IsBasvuru/Reddet/{id}",
+                defaults: new { controller = "AdminJobApply", action = "Delete", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "IsBasvuruRoute",
+                url: "Admin/IsBasvuru",
+                defaults: new { controller = "AdminJobApply", action = "JobApply", id = UrlParameter.Optional }
+            );
             routes.MapRoute(
                 name: "KayitOlRoute",
                 url: "KayitOl",
@@ -96,7 +137,7 @@ namespace BilBasarEgitim
             routes.MapRoute(
                 name: "BasvuruRoute",
                 url: "Basvuru",
-                defaults: new { controller = "Appeal", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Apply", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BilBasarEgitim.Models.Entities
+namespace BilBasarEgitim.Models.Dtos
 {
-    public class EducationalAppeal:BaseEntity
+    public class EducationalApplyDetailDto
     {
+        public Guid Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
@@ -15,5 +16,7 @@ namespace BilBasarEgitim.Models.Entities
         public string ParentPhone { get; set; }
         public string SchoolName { get; set; }
         public string Grade { get; set; }
+        public string CreateDate { get; set; }
     }
+
 }

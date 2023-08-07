@@ -11,6 +11,5 @@ namespace BilBasarEgitim.Models.Entities
         public string DocumentUrl { get; set; }
         public Guid AdminId { get; set; }
         public Admin Admin { get; set; }
-        
     }
 }
