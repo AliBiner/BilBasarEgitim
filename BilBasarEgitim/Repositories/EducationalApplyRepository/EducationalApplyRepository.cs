@@ -127,5 +127,33 @@ namespace BilBasarEgitim.Repositories.EducationalApplyRepository
             }
             _connection.Close();
         }
+        public List<EducationalApply> GetAllForApproval()
+        {
+            _connection.Open();
+            string query = "select * from educationalapplies where DeleteDate is null and UpdateDate is not null and EducatioanlAppealCheck=true";
+            List<EducationalApply> educationalApplies = new List<EducationalApply>();
+            using (MySqlCommand command = new MySqlCommand(query, _connection))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        EducationalApply educationalApply = new EducationalApply()
+                        {
+                            Id = reader.GetGuid("Id"),
+                            FullName = reader.GetString("FullName"),
+                            EducationalField = reader.GetString("EducationalField"),
+                            Grade = reader.GetString("Grade"),
+                            CreateDate = reader.GetDateTime("CreateDate"),
+                            SchoolName = reader.GetString("SchoolName")
+                        };
+                        educationalApplies.Add(educationalApply);
+                    }
+                }
+            }
+            _connection.Close();
+            return educationalApplies;
+
+        }
     }
 }

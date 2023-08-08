@@ -12,11 +12,25 @@ namespace BilBasarEgitim
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "DokumanlarRoute",
+                url: "Admin/Dokumanlar/",
+                defaults: new { controller = "AdminDocument", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "EgitimBasvuruOnaylananlarRoute",
+                url: "Admin/EgitimBasvuru/Onaylananlar",
+                defaults: new { controller = "AdminEducationApply", action = "GetAllApproval", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "EgitimBasvuruOnayRoute",
                 url: "Admin/EgitimBasvuru/Onay/{id}",
                 defaults: new { controller = "AdminEducationApply", action = "Approval", id = UrlParameter.Optional }
-            ); routes.MapRoute(
+            ); 
+            routes.MapRoute(
                 name: "EgitimBasvuruSilRoute",
                 url: "Admin/EgitimBasvuru/Sil/{id}",
                 defaults: new { controller = "AdminEducationApply", action = "Delete", id = UrlParameter.Optional }
@@ -32,7 +46,11 @@ namespace BilBasarEgitim
                 url: "Admin/EgitimBasvuru",
                 defaults: new { controller = "AdminEducationApply", action = "EducationalApply", id = UrlParameter.Optional }
             );
-
+            routes.MapRoute(
+                name: "IsBasvuruOnaylananlarRoute",
+                url: "Admin/IsBasvuru/Onaylananlar",
+                defaults: new { controller = "AdminJobApply", action = "GetAllApproval", id = UrlParameter.Optional }
+            );
             routes.MapRoute(
                 name: "DetayRoute",
                 url: "Admin/IsBasvuru/Detay/{id}",

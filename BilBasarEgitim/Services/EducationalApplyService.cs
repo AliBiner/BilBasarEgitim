@@ -50,5 +50,12 @@ namespace BilBasarEgitim.Services
         {
             _educationalApplyRepository.Update(id);
         }
+
+        public List<EducationalApplyPreviewDto> GetAllForApproval()
+        {
+            var model = _educationalApplyRepository.GetAll();
+            var dtos = CustomMapper.ToEducationalApplyPreviewDtos(model);
+            return dtos;
+        }
     }
 }

@@ -132,5 +132,35 @@ namespace BilBasarEgitim.Repositories.JobApplyRepository
             }
             _connection.Close();
         }
+
+        public List<JobApply> GetAllApproval()
+        {
+            _connection.Open();
+            string query = "Select * from jobapplies where DeleteDate is Null and UpdateDate is not null and jobapplycheck = true";
+            List<JobApply> jobAppeals = new List<JobApply>();
+            using (MySqlCommand command = new MySqlCommand(query, _connection))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        JobApply jobApply = new JobApply()
+                        {
+                            Id = reader.GetGuid("Id"),
+                            FullName = reader.GetString("FullName"),
+                            BirthDate = reader.GetString("BirthDate"),
+                            JobRole = reader.GetString("JobRole"),
+                            Gender = reader.GetString("Gender"),
+                            Nationality = reader.GetString("Nationality"),
+                            CreateDate = reader.GetDateTime("CreateDate")
+                        };
+                        jobAppeals.Add(jobApply);
+                    }
+                }
+            }
+            _connection.Close();
+            return jobAppeals;
+        }
+
     }
 }

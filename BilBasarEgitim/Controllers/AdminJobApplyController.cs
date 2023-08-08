@@ -40,5 +40,13 @@ namespace BilBasarEgitim.Controllers
             return RedirectToAction("JobApply");
 
         }
+        public ActionResult GetAllApproval()
+        {
+            var model =_applyService.GetAllForApproval();
+            return View(model);
+
+        }
+       
+        
     }
 }

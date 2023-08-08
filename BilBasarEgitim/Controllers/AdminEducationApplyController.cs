@@ -4,11 +4,13 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Web;
 using System.Web.Mvc;
+using BilBasarEgitim.App_Start;
 using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Services;
 
 namespace BilBasarEgitim.Controllers
 {
+    [CustomActionFilter]
     public class AdminEducationApplyController : Controller
     {
         private readonly EducationalApplyService _educationalApplyService = new EducationalApplyService();
@@ -35,6 +37,11 @@ namespace BilBasarEgitim.Controllers
         {
             _educationalApplyService.UpdateById(id);
             return RedirectToAction("EducationalApply");
+        }
+        public ActionResult GetAllApproval()
+        {
+            var model =_educationalApplyService.GetAllForApproval();
+            return View(model);
         }
 
     }

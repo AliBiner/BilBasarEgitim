@@ -59,5 +59,12 @@ namespace BilBasarEgitim.Services
         {
             _jobApplyRepository.Update(id);
         }
+
+        public List<JobApplyPreviewDto> GetAllForApproval()
+        {
+            var model = _jobApplyRepository.GetAllApproval();
+            var dtos = CustomMapper.ToJobAppealPreviewDtos(model);
+            return dtos;
+        }
     }
 }
