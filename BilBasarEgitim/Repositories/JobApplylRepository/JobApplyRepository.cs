@@ -16,9 +16,9 @@ namespace BilBasarEgitim.Repositories.JobApplyRepository
         {
             _connection.Open();
             string insertQuery = @"INSERT INTO jobapplies
-                                  (Id, CreateDate, UpdateDate, DeleteDate, JobAppealCheck, FullName, Email, Phone, BirthDate, JobRole, Gender, MartialStatus, Nationality, GraduateSchool, JobExperience,CvUrl)
+                                  (Id, CreateDate, UpdateDate, DeleteDate, JobApplyCheck, FullName, Email, Phone, BirthDate, JobRole, Gender, MartialStatus, Nationality, GraduateSchool, JobExperience,CvUrl)
                                   VALUES
-                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @JobAppealCheck, @FullName, @Email, @Phone, @BirthDate, @JobRole, @Gender, @MartialStatus, @Nationality, @GraduateSchool, @JobExperience,@CvUrl)";
+                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @JobApplyCheck, @FullName, @Email, @Phone, @BirthDate, @JobRole, @Gender, @MartialStatus, @Nationality, @GraduateSchool, @JobExperience,@CvUrl)";
 
             using (MySqlCommand command = new MySqlCommand(insertQuery, _connection))
             {
@@ -26,7 +26,7 @@ namespace BilBasarEgitim.Repositories.JobApplyRepository
                 command.Parameters.AddWithValue("@CreateDate", CustomMethod.TurkeyTime());
                 command.Parameters.AddWithValue("@UpdateDate", DBNull.Value);
                 command.Parameters.AddWithValue("@DeleteDate", DBNull.Value);
-                command.Parameters.AddWithValue("@JobAppealCheck", true);
+                command.Parameters.AddWithValue("@JobApplyCheck", true);
                 command.Parameters.AddWithValue("@FullName", entity.FullName);
                 command.Parameters.AddWithValue("@Email", entity.Email);
                 command.Parameters.AddWithValue("@Phone", entity.Phone);
@@ -108,12 +108,12 @@ namespace BilBasarEgitim.Repositories.JobApplyRepository
         public void Delete(Guid id)
         {
             _connection.Open();
-            string query = "update jobapplies set DeleteDate = @DeleteDate, JobAppealCheck=@JobAppealCheck where Id=@Id";
+            string query = "update jobapplies set DeleteDate = @DeleteDate, JobApplyCheck=@JobApplyCheck where Id=@Id";
             using (MySqlCommand command = new MySqlCommand(query,_connection))
             {
                 command.Parameters.AddWithValue("Id", id);
                 command.Parameters.AddWithValue("DeleteDate", CustomMethod.TurkeyTime());
-                command.Parameters.AddWithValue("JobAppealCheck", false);
+                command.Parameters.AddWithValue("JobApplyCheck", false);
                 command.ExecuteNonQuery();
 
             }
@@ -136,7 +136,7 @@ namespace BilBasarEgitim.Repositories.JobApplyRepository
         public List<JobApply> GetAllApproval()
         {
             _connection.Open();
-            string query = "Select * from jobapplies where DeleteDate is Null and UpdateDate is not null and jobapplycheck = true";
+            string query = "Select * from jobapplies where DeleteDate is Null and UpdateDate is not null and JobApplyCheck = true";
             List<JobApply> jobAppeals = new List<JobApply>();
             using (MySqlCommand command = new MySqlCommand(query, _connection))
             {

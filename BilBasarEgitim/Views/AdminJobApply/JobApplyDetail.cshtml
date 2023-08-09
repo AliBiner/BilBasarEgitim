@@ -1,6 +1,6 @@
 ﻿@model BilBasarEgitim.Models.Dtos.JobApplyDetailDto
 @{
-    ViewBag.Title = "JobApplyDetail";
+    ViewBag.Title = "İş Başvuru - Detay";
     Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 }
 
@@ -84,13 +84,10 @@
                         <div class="row mb-3">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-10">
-                                <a href="/Upload/Documents/@Model.CvUrl">Cv</a>
+                                <a href="/Upload/Cvs/@Model.CvUrl">Cv</a>
                             </div>
                         </div>
-                        
-                        @using (Html.BeginForm("Index", "Admin"))
-                        {
-                        }
+
 
 
                     </div>

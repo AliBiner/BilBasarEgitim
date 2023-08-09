@@ -130,5 +130,42 @@ namespace BilBasarEgitim.Mappers
             };
         }
 
+        public static Document DocumentAddDtoTo(DocumentAddDto dto)
+        {
+            return new Document()
+            {
+                Description = dto.Description,
+                AdminId = dto.AdminId
+            };
+        }
+
+        public static List<DocumentPreviewDto> ToDocumentPreviewDtos(List<Document> list)
+        {
+            List<DocumentPreviewDto> dtos = new List<DocumentPreviewDto>();
+            foreach (var i in list)
+            {
+                DocumentPreviewDto dto = new DocumentPreviewDto()
+                {
+                    Id = i.Id,
+                    Description = i.Description,
+                    DocumentUrl = i.DocumentUrl,
+                    CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm")
+                };
+                dtos.Add(dto);
+            }
+
+            return dtos;
+        }
+
+        public static SendEmailDto ToSendEmailDto(SendEmail entity)
+        {
+            return new SendEmailDto()
+            {
+                Id = entity.Id,
+                Email = entity.Email,
+                Update = entity.UpdateDate.ToString("dd/MM/yyyy HH:mm")
+            };
+        }
+
     }
 }

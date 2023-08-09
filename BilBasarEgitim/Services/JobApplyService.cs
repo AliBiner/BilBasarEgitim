@@ -17,7 +17,7 @@ namespace BilBasarEgitim.Services
         {
             try
             {
-                var cvurl = CustomMethod.DocumentUpload(cv);
+                var cvurl = CustomMethod.CvUpload(cv);
                 var model = CustomMapper.JobAppealAddDtoTo(dto);
                 model.CvUrl = cvurl;
                 _jobApplyRepository.Add(model);
@@ -32,28 +32,47 @@ namespace BilBasarEgitim.Services
 
         public List<JobApplyPreviewDto> GetAllForPreview()
         {
-           
+            try
+            {
                 var model = _jobApplyRepository.GetAll();
                 var dtos = CustomMapper.ToJobAppealPreviewDtos(model);
                 return dtos;
-            
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+               
            
 
         }
 
         public JobApplyDetailDto GetById(Guid id)
         {
-            
-            var model = _jobApplyRepository.GetById(id);
-            var dto = CustomMapper.ToJobAppealDetailDto(model);
-            return dto;
+            try
+            {
+                var model = _jobApplyRepository.GetById(id);
+                var dto = CustomMapper.ToJobAppealDetailDto(model);
+                return dto;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+           
 
 
         }
 
         public void DeleteById(Guid id)
         {
+            var model = GetById(id);
+            CustomMethod.CvDelete(model.CvUrl);
             _jobApplyRepository.Delete(id);
+            
         }
         public void UpdateById(Guid id)
         {
@@ -62,9 +81,18 @@ namespace BilBasarEgitim.Services
 
         public List<JobApplyPreviewDto> GetAllForApproval()
         {
-            var model = _jobApplyRepository.GetAllApproval();
-            var dtos = CustomMapper.ToJobAppealPreviewDtos(model);
-            return dtos;
+            try
+            {
+                var model = _jobApplyRepository.GetAllApproval();
+                var dtos = CustomMapper.ToJobAppealPreviewDtos(model);
+                return dtos;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+           
         }
     }
 }

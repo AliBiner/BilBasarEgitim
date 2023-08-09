@@ -16,9 +16,9 @@ namespace BilBasarEgitim.Repositories.EducationalApplyRepository
         {
             _connection.Open();
             string insertQuery = @"INSERT INTO educationalapplies
-                                  (Id, CreateDate, UpdateDate, DeleteDate, EducatioanlAppealCheck, FullName, Email, Phone, EducationalField, ParentName, ParentPhone, SchoolName, Grade)
+                                  (Id, CreateDate, UpdateDate, DeleteDate, EducatioanlApplyCheck, FullName, Email, Phone, EducationalField, ParentName, ParentPhone, SchoolName, Grade)
                                   VALUES
-                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @EducatioanlAppealCheck, @FullName, @Email, @Phone, @EducationalField, @ParentName, @ParentPhone, @SchoolName, @Grade)";
+                                  (@Id, @CreateDate, @UpdateDate, @DeleteDate, @EducatioanlApplyCheck, @FullName, @Email, @Phone, @EducationalField, @ParentName, @ParentPhone, @SchoolName, @Grade)";
 
 
             using (MySqlCommand command = new MySqlCommand(insertQuery, _connection))
@@ -27,7 +27,7 @@ namespace BilBasarEgitim.Repositories.EducationalApplyRepository
                 command.Parameters.AddWithValue("@CreateDate", CustomMethod.TurkeyTime());
                 command.Parameters.AddWithValue("@UpdateDate", DBNull.Value);
                 command.Parameters.AddWithValue("@DeleteDate", DBNull.Value);
-                command.Parameters.AddWithValue("@EducatioanlAppealCheck", true);
+                command.Parameters.AddWithValue("@EducatioanlApplyCheck", true);
                 command.Parameters.AddWithValue("@FullName", entity.FullName);
                 command.Parameters.AddWithValue("@Email", entity.Email);
                 command.Parameters.AddWithValue("@Phone", entity.Phone);
@@ -130,7 +130,7 @@ namespace BilBasarEgitim.Repositories.EducationalApplyRepository
         public List<EducationalApply> GetAllForApproval()
         {
             _connection.Open();
-            string query = "select * from educationalapplies where DeleteDate is null and UpdateDate is not null and EducatioanlAppealCheck=true";
+            string query = "select * from educationalapplies where DeleteDate is null and UpdateDate is not null and EducatioanlApplyCheck=true";
             List<EducationalApply> educationalApplies = new List<EducationalApply>();
             using (MySqlCommand command = new MySqlCommand(query, _connection))
             {

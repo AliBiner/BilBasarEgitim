@@ -483,6 +483,7 @@
     <Compile Include="Controllers\AdminDocumentController.cs" />
     <Compile Include="Controllers\AdminEducationApplyController.cs" />
     <Compile Include="Controllers\AdminJobApplyController.cs" />
+    <Compile Include="Controllers\AdminSendEmailController.cs" />
     <Compile Include="Controllers\ApplyController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
@@ -498,12 +499,15 @@
     <Compile Include="Methods\CustomMethod.cs" />
     <Compile Include="Models\Dtos\AdminLoginDto.cs" />
     <Compile Include="Models\Dtos\AdminRegisterDto.cs" />
+    <Compile Include="Models\Dtos\DocumentAddDto.cs" />
+    <Compile Include="Models\Dtos\DocumentPreviewDto.cs" />
     <Compile Include="Models\Dtos\EducationalApplyAddDto.cs" />
     <Compile Include="Models\Dtos\EducationalApplyDetailDto.cs" />
     <Compile Include="Models\Dtos\EducationalApplyPreviewDto.cs" />
     <Compile Include="Models\Dtos\JobApplyDetailDto.cs" />
     <Compile Include="Models\Dtos\JobApplyPreviewDto.cs" />
     <Compile Include="Models\Dtos\JopApplyAddDto.cs" />
+    <Compile Include="Models\Dtos\SendEmailDto.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Document.cs" />
@@ -515,10 +519,12 @@
     <Compile Include="Repositories\DocumentRepository.cs" />
     <Compile Include="Repositories\EducationalApplyRepository\EducationalApplyRepository.cs" />
     <Compile Include="Repositories\JobApplylRepository\JobApplyRepository.cs" />
+    <Compile Include="Repositories\SendEmailRepository.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\DocumentService.cs" />
     <Compile Include="Services\EducationalApplyService.cs" />
     <Compile Include="Services\JobApplyService.cs" />
+    <Compile Include="Services\SendEmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -639,6 +645,8 @@
     <Content Include="Views\AdminJobApply\GetAllApproval.cshtml" />
     <Content Include="Views\AdminEducationApply\GetAllApproval.cshtml" />
     <Content Include="Views\AdminDocument\Index.cshtml" />
+    <Content Include="Views\AdminDocument\Add.cshtml" />
+    <Content Include="Views\AdminSendEmail\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -649,6 +657,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Context\" />
+    <Folder Include="Upload\Cvs\" />
     <Folder Include="Upload\Documents\" />
   </ItemGroup>
   <ItemGroup>

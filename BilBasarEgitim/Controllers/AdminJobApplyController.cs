@@ -11,7 +11,7 @@ namespace BilBasarEgitim.Controllers
     [CustomActionFilter]
     public class AdminJobApplyController : Controller
     {
-        JobApplyService _applyService = new JobApplyService();
+        private readonly JobApplyService _applyService = new JobApplyService();
         // GET: AdminJobAppeal
         public ActionResult JobApply()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BilBasarEgitim.Mappers;
+using BilBasarEgitim.Methods;
 using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Repositories.EducationalApplyRepository;
 
@@ -29,20 +30,39 @@ namespace BilBasarEgitim.Services
 
         public List<EducationalApplyPreviewDto> GetAll()
         {
-            var model = _educationalApplyRepository.GetAll();
-            var dtos = CustomMapper.ToEducationalApplyPreviewDtos(model);
-            return dtos;
+            try
+            {
+                var model = _educationalApplyRepository.GetAll();
+                var dtos = CustomMapper.ToEducationalApplyPreviewDtos(model);
+                return dtos;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+           
         }
 
         public EducationalApplyDetailDto GetById(Guid id)
         {
-            var model = _educationalApplyRepository.GetById(id);
-            var dto = CustomMapper.ToEducationalApplyDetailDto(model);
-            return dto;
+            try
+            {
+                var model = _educationalApplyRepository.GetById(id);
+                var dto = CustomMapper.ToEducationalApplyDetailDto(model);
+                return dto;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+           
         }
 
         public void DeleteById(Guid id)
         {
+
             _educationalApplyRepository.Delete(id);
         }
 
@@ -53,9 +73,18 @@ namespace BilBasarEgitim.Services
 
         public List<EducationalApplyPreviewDto> GetAllForApproval()
         {
-            var model = _educationalApplyRepository.GetAll();
-            var dtos = CustomMapper.ToEducationalApplyPreviewDtos(model);
-            return dtos;
+            try
+            {
+                var model = _educationalApplyRepository.GetAllForApproval();
+                var dtos = CustomMapper.ToEducationalApplyPreviewDtos(model);
+                return dtos;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+           
         }
     }
 }

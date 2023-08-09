@@ -1,0 +1,51 @@
+﻿@model BilBasarEgitim.Models.Dtos.SendEmailDto
+@{
+    ViewBag.Title = "Email";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<main id="main" class="main">
+
+    <section class="section">
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <h5 class="card-title mt-4">Email</h5>
+                        @using (Html.BeginForm("Index", "AdminSendEmail", FormMethod.Post))
+                        {
+                            <div class="row g-3">
+                                <div class="row mt-4">
+                                    <label for="inputNanme4" class="col-sm-3 col-form-label">Başvuruların Gönderileceği Email</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class=" form-control" name="Email" id="inputNanme4" value="@Model.Email">
+                                    </div>
+                                   
+                                </div>
+                                <div class="row col-12 mt-4">
+                                    <div class="col-sm-3">En Son Güncelleme Tarihi </div>
+                                    <div class="col-sm-9">@Model.Update </div>
+                                </div>
+                                <input type="hidden" name="id" value="@Model.Id"/>
+                                <div class="text-center my-4">
+                                    <button type="submit" class="btn btn-primary">Değiştir</button>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

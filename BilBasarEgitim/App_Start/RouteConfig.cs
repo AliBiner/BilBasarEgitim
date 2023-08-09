@@ -12,11 +12,26 @@ namespace BilBasarEgitim
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "EmailRoute",
+                url: "Admin/Email",
+                defaults: new { controller = "AdminSendEmail", action = "Index", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "DokumanlarRoute",
-                url: "Admin/Dokumanlar/",
+                url: "Admin/Dokumanlar",
                 defaults: new { controller = "AdminDocument", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "DokumanYukleRoute",
+                url: "Admin/Dokumanlar/Yukle",
+                defaults: new { controller = "AdminDocument", action = "Add", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "DokumanlarSillRoute",
+                url: "Admin/Dokumanlar/Sill/{id}",
+                defaults: new { controller = "AdminDocument", action = "Delete", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

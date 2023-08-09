@@ -10,7 +10,6 @@ namespace BilBasarEgitim.Models.Entities
         public Admin()
         {
             Documents = new List<Document>();
-            SendEmails = new List<SendEmail>();
         }
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -18,6 +17,5 @@ namespace BilBasarEgitim.Models.Entities
         
 
         public List<Document> Documents { get; set; }
-        public List<SendEmail> SendEmails { get; set; }
     }
 }

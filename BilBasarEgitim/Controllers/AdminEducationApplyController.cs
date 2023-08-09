@@ -16,8 +16,10 @@ namespace BilBasarEgitim.Controllers
         private readonly EducationalApplyService _educationalApplyService = new EducationalApplyService();
         public ActionResult EducationalApply()
         {
-            var model=_educationalApplyService.GetAll();
+            var model = _educationalApplyService.GetAll();
             return View(model);
+            
+            
         }
         [HttpGet]
         public ActionResult EducationalApplyDetail(Guid id)
