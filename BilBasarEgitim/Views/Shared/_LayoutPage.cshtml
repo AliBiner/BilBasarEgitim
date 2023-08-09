@@ -23,6 +23,8 @@
     </noscript>
     <link rel="preload" as="style" href="~/assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="~/assets/mobirise/css/mbr-additional.css" type="text/css">
+
+    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 </head>
 <body>
     <section data-bs-version="5.1" class="menu menu1 cid-tHf4Bu2T7y" once="menu" id="menu1-0">
@@ -66,53 +68,64 @@
     <div class="">
         @RenderBody()
     </div>
-    <footer>
-        <section data-bs-version="5.1" class="footer3 cid-tHfHtJnpMJ" once="footers" id="footer3-8">
-            <div class="container">
-                <div class="media-container-row align-center mbr-white">
-                    <div class="row row-links">
-                        <ul class="foot-menu">
-                            <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Hakkında" class="text-white">Hakkımızda</a></li>
-                            <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Galeri" class="text-white">Galeri</a></li>
-                            <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Öğrenci-Portalı" class="text-white">Öğrenci Portalı</a></li>
-                            <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Insan-Kaynakları" class="text-white">İnsan Kaynakları</a></li>
-                            <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Iletisim" class="text-white">İletişim</a></li>
-                        </ul>
-                    </div>
-                    <div class="row social-row">
-                        <div class="social-list align-right pb-2">
-                            <div class="soc-item">
-                                <a href="https://twitter.com/AnkaraBilbasar?s=20" target="_blank">
-                                    <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://www.facebook.com/bilbasaregitim" target="_blank">
-                                    <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
-                                </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://www.youtube.com/BilbasarOzelOgretim/featured" target="_blank">
-                                        <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
-                                    </a>
-                            </div>
-                            <div class="soc-item">
-                                <a href="https://www.instagram.com/bilbasaregitim/" target="_blank">
-                                    <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
-                                </a>
-                            </div>
+    <section data-bs-version="5.1" class="footer3 cid-tHfHtJnpMJ" once="footers" id="footer3-8">
+
+
+
+
+
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="row row-links">
+                    <ul class="foot-menu">
+
+
+
+
+
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="hakkimizda.html" class="text-white">Hakkımızda</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="galeri.html" class="text-white">Galeri</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="ogrenci_portal.html" class="text-white">Öğrenci Portalı</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="insan_kaynaklari.html" class="text-white">İnsan Kaynakları</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="iletisim.html" class="text-white">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
+
+
+
+
+
+
+                        <div class="soc-item">
+                            <a href="https://twitter.com/AnkaraBilbasar?s=20" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://www.facebook.com/bilbasaregitim" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://www.youtube.com/BilbasarOzelOgretim/featured" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
+                            </a>
+                        </div><div class="soc-item">
+                            <a href="https://www.instagram.com/bilbasaregitim/" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
+                            </a>
                         </div>
                     </div>
-                    <div class="row row-copirayt">
-                        <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                            © Copyright 2023 Tmk Mühendislik - Tüm Hakları Saklıdır.
-                        </p>
-                    </div>
+                </div>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        © Copyright 2023 Tmk Mühendislik - Tüm Hakları Saklıdır.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem; background-color: #1673c3; color: #1673c3;"><a href="https://mobiri.se/3028709" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1; background-color: #1673c3; color: #1673c3;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com/offline-website-builder.html"></a></section>
 
-    </footer>
 
     <script src="~/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/smoothscroll/smooth-scroll.js"></script>
@@ -122,6 +135,8 @@
     <script src="~/assets/embla/script.js"></script>
     <script src="~/assets/playervimeo/vimeo_player.js"></script>
     <script src="~/assets/theme/js/script.js"></script>
-    <script src="~/assets/formoid/formoid.min.js"></script>
+<script src="~/assets/formoid/formoid.min.js"></script>
+<script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
 </body>
+
 </html>

@@ -18,76 +18,79 @@
             <div class="col-lg-8 mx-auto mbr-form">
                 @using (Html.BeginForm("Index", "HumanResources", FormMethod.Post,new {enctype= "multipart/form-data" }))
                 {
+                
                     <div>
-                        <h5 style="color: red">@ViewBag.Error</h5>
+            <h5 style="color: red">@ViewBag.Error</h5>
+        </div>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ad ve Soyad:</label>
+                        <input type="text" id="name" name="FullName" class="form-input"
+                               placeholder="Adınız ve Soyadınız" required>
                     </div>
                     <div class="form-group">
-                            <label for="name" class="form-label">Ad ve Soyad:</label>
-                            <input type="text" id="name" name="FullName" class="form-input"
-                                   placeholder="Adınız ve Soyadınız" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-posta:</label>
-                            <input type="email" id="email" name="Email" class="form-input"
-                                   placeholder="E-posta adresiniz" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Telefon:</label>
-                            <input type="tel" id="phone" name="Phone" class="form-input" placeholder="Telefon numaranız"
-                                   required>
-                        </div>
-                        <div class="form-group">
-                            <label for="birthdate" class="form-label">Doğum Tarihi:</label>
-                            <input type="date" id="birthdate" name="BirthDate" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="work-type" class="form-label">Çalışma Şekli:</label>
-                            <select id="work-type" name="JobRole" class="form-input" required>
-                                <option value="Tam Zamanlı">Tam Zamanlı</option>
-                                <option value="Yarı Zamanlı">Yarı Zamanlı</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="gender" class="form-label">Cinsiyet:</label>
-                            <select id="gender" name="Gender" class="form-input" required>
-                                <option value="Erkek">Erkek</option>
-                                <option value="Kadın">Kadın</option>
-                                <option value="Diğer">Diğer</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="marital-status" class="form-label">Medeni Hali:</label>
-                            <select id="marital-status" name="MartialStatus" class="form-input" required>
-                                <option value="Bekar">Bekar</option>
-                                <option value="Evli">Evli</option>
-                                <option value="Boşanmış">Boşanmış</option>
-                                <option value="Dul">Dul</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="nationality" class="form-label">Uyruk:</label>
-                            <select id="nationality" name="Nationality" class="form-input" required>
-                                <option value="Türk">Türk</option>
-                                <option value="Yabancı">Yabancı</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="school" class="form-label">Mezun Olduğu Okul ve Bölüm:</label>
-                            <textarea id="school" name="GraduateSchool" class="form-textarea"
-                                      placeholder="Mezun olduğunuz okulu ve bölümü yazınız" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="previous-jobs" class="form-label">Daha Önce Çalıştığı Yerler:</label>
-                            <textarea id="previous-jobs" name="JobExperience" class="form-textarea"
-                                      placeholder="Daha önce çalıştığınız yerleri yazınız"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="cv" class="form-label">CV Yükleyin:</label>
-                            <input type="file" id="cv" name="cv" class="form-input" accept=".pdf,.doc,.docx" required>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                            <input type="submit" class="btn btn-primary display-4" value="Başvur">
-                        </div>
+                        <label for="email" class="form-label">E-posta:</label>
+                        <input type="email" id="email" name="Email" class="form-input"
+                               placeholder="E-posta adresiniz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefon:</label>
+                        <input type="tel" id="phone" name="Phone" class="form-input" placeholder="Telefon numaranız"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate" class="form-label">Doğum Tarihi:</label>
+                        <input type="date" id="birthdate" name="BirthDate" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="work-type" class="form-label">Çalışma Şekli:</label>
+                        <select id="work-type" name="JobRole" class="form-input" required>
+                            <option value="Tam Zamanlı">Tam Zamanlı</option>
+                            <option value="Yarı Zamanlı">Yarı Zamanlı</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="form-label">Cinsiyet:</label>
+                        <select id="gender" name="Gender" class="form-input" required>
+                            <option value="Erkek">Erkek</option>
+                            <option value="Kadın">Kadın</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="marital-status" class="form-label">Medeni Hali:</label>
+                        <select id="marital-status" name="MartialStatus" class="form-input" required>
+                            <option value="Bekar">Bekar</option>
+                            <option value="Evli">Evli</option>
+                            <option value="Boşanmış">Boşanmış</option>
+                            <option value="Dul">Dul</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nationality" class="form-label">Uyruk:</label>
+                        <select id="nationality" name="Nationality" class="form-input" required>
+                            <option value="Türk">Türk</option>
+                            <option value="Yabancı">Yabancı</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="school" class="form-label">Mezun Olduğu Okul ve Bölüm:</label>
+                        <textarea id="school" name="GraduateSchool" class="form-textarea"
+                                  placeholder="Mezun olduğunuz okulu ve bölümü yazınız" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="previous-jobs" class="form-label">Daha Önce Çalıştığı Yerler:</label>
+                        <textarea id="previous-jobs" name="JobExperience" class="form-textarea"
+                                  placeholder="Daha önce çalıştığınız yerleri yazınız"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cv" class="form-label">CV Yükleyin:</label>
+                        <input type="file" id="cv" name="cv" class="form-input" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                        <input type="submit" class="btn btn-primary display-4" value="Başvur">
+                    </div>
+                
+                  
                    
                 }
 

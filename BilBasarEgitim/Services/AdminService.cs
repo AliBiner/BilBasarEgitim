@@ -67,7 +67,7 @@ namespace BilBasarEgitim.Services
             HttpContext.Current.Session["Id"] = entity.Id;
         }
 
-        public void Logout()
+        public void SignOut()
         {
             HttpContext.Current.Session.Abandon();
             FormsAuthentication.SignOut();

@@ -52,11 +52,11 @@ namespace BilBasarEgitim.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult Logout()
         {
             AdminService adminService = new AdminService();
-            adminService.Logout();
+            adminService.SignOut();
             return RedirectToActionPermanent("Index");
         }
 

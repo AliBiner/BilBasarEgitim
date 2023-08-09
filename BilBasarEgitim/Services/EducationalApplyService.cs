@@ -19,7 +19,9 @@ namespace BilBasarEgitim.Services
             {
                 var model = CustomMapper.EducationalAppealAddDtoTo(dto);
                 _educationalApplyRepository.Add(model);
-                return "İşlem Başarılı";
+                SendEmailService sendEmail = new SendEmailService();
+                var result = sendEmail.SendEmailForEducational(dto);
+                return result;
             }
             catch (Exception e)
             {

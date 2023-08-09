@@ -28,11 +28,11 @@ namespace BilBasarEgitim
                 defaults: new { controller = "Admin", action = "AdminProfile", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(
-                name: "CikisYappRoute",
-                url: "Admin/CikisYapp",
-                defaults: new { controller = "Admin", action = "Logout", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "CikisRoute",
+            //    url: "Admin/Cikis",
+            //    defaults: new { controller = "Admin", action = "SignOut", id = UrlParameter.Optional }
+            //);
 
             routes.MapRoute(
                 name: "EmailRoute",

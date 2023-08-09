@@ -1,4 +1,4 @@
-﻿
+﻿@model List<BilBasarEgitim.Models.Dtos.DocumentPreviewDto>
 @{
     ViewBag.Title = "Öğrenci Portalı";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -9,14 +9,62 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="counter-container col-md-12 col-lg-10">
-                <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5">
-                    Sınav sonuçlarımız...
-                </h4>
                 <div class="mbr-text mbr-fonts-style display-7">
                     <ul>
-                        <li><strong>No Coding </strong>You don't have to code to create your own site. Select one of available themes in the Mobirise sitebuilder. <a href="https://mobiri.se/">Try it now!</a></li>
-                        <li><strong>Mobile Friendly. </strong>All sites you create with the Mobirise web builder are mobile-friendly natively. No special actions required. <a href="https://mobiri.se/">Try it now!</a></li>
-                        <li><strong>Unique Styles. </strong>Select the theme that suits you. Each theme in the Mobirise site builder contains a set of unique blocks. <a href="https://mobiri.se/">Try it now!</a></li>
+
+                        <main id="main" class="main">
+
+                            <section class="section">
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <!-- Table with stripped rows -->
+                                                <table class="table datatable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Açıklama</th>
+                                                            <th scope="col">Döküman</th>
+                                                            <th scope="col">Yükleme Tarihi</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model == null)
+                                                        {
+
+
+                                                        }
+                                                        else
+                                                        {
+
+                                                            int i = 1;
+                                                            foreach (var item in Model)
+                                                            {
+                                                                <tr>
+                                                                    <th scope="row">@i</th>
+                                                                    <td>@item.Description</td>
+                                                                    <td><a href="/Upload/Documents/@item.DocumentUrl"> @item.DocumentUrl</a></td>
+                                                                    <td>@item.CreateDate</td>
+                                                                </tr>
+                                                                i++;
+                                                            }
+                                                        }
+
+
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                        </main>
                     </ul>
                 </div>
             </div>

@@ -73,10 +73,11 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="/Admin/CikisYapp">
+                            <a id="logoutLink" class="dropdown-item d-flex align-items-center" href="#">Çıkış Yap</a>
+                            @*<a class="dropdown-item d-flex align-items-center" href="@Url.Action("CikisYap", "Admin")">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Çıkış Yap</span>
-                            </a>
+                            </a>*@
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->
@@ -158,6 +159,18 @@
 
     <!-- Template Main JS File -->
 <script src="~/assets/js/main.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#logoutLink').click(function () {
+            $.post('@Url.Action("Logout", "Admin")', function () {
+                // Çıkış işlemi tamamlandığında yapılacak işlemler
+                alert("Çıkış işlemi başarıyla gerçekleşti.");
+                location.reload(); // Sayfayı yeniden yükleme
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

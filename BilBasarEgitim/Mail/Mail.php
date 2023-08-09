@@ -13,10 +13,10 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $adSoyad = $_POST["AdSoyad"];
+    $adSoyad = $_POST["FullName"];
     $email = $_POST["Email"];
-    $telefon = $_POST["Telefon"];
-   $date = $_POST["Date"];
+    $telefon = $_POST["Phone"];
+   //$date = $_POST["Date"];
     //$mesaj = $_POST["Message"];
 
    /* $message = "Ad ve Soyad: $adSoyad\n";
@@ -40,7 +40,7 @@ try {
     $mail->setFrom('system@tmkmuhendislik.com', 'Mehmet KARA'); // Gonderen bilgileri yukaridaki $mail->Username ile aynı deger olmali
 
     //Alici Ayarları
-    $mail->addAddress($_POST["SendEmail"]); // Alıcı bilgileri
+    $mail->addAddress("ali.bnr.63@gmail.com"); // Alıcı bilgileri
     //$mail->addAddress('mhmmtkara.93@gmail.com');					// İkinci alıcı bilgileri
     //$mail->addReplyTo('YANITADRESI@domainadi.com');			// Alıcı'nın emaili yanıtladığında farklı adrese göndermesini istiyorsaniz aktif edin
     //$mail->addCC('CC@domainadi.com');
@@ -56,15 +56,15 @@ try {
     $mail->Subject = ''. $_POST["Subject"] . ;
    // $mail->Body    = 'Bu bölüm mailin <b>'.$message.'</b> içeriğidir';
 
-   $mail->Body = '<b>Ad ve Soyad: </b>' . $_POST["AdSoyad"] . '<br>';
+   $mail->Body = '<b>Ad ve Soyad: </b>' . $_POST["FullName"] . '<br>';
 $mail->Body .= '<b>Email: </b>' . $_POST["Email"] . '<br>';
-$mail->Body .= '<b>Telefon: </b>' . $_POST["Telefon"] . '<br>';
-$mail->Body .= '<b>Mesaj: </b>' . $_POST["Message"] . '<br>';
-$mail->Body .= 'Tarih: ' . $_POST["Date"] . '<br>';
+$mail->Body .= '<b>Telefon: </b>' . $_POST["Phone"] . '<br>';
+//$mail->Body .= '<b>Mesaj: </b>' . $_POST["Message"] . '<br>';
+//$mail->Body .= 'Tarih: ' . $_POST["Date"] . '<br>';
     $mail->send();
     //echo 'Tebrikler! Email başarıyla gönderildi!';
     echo '<script>alert("Formunuz başarıyla gönderildi.");</script>';
-    //$yeni_adres = "index.html";
+    //$yeni_adres = "/İnsan-Kaynakları";
 
 // Yönlendirme işlemi
 header("Refresh: 0; URL=" . /*$yeni_adres*/);
