@@ -13,6 +13,28 @@ namespace BilBasarEgitim
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
+                name: "AdminProfilSifreDegisterRoute",
+                url: "Admin/Profil/SifreDegister",
+                defaults: new { controller = "Admin", action = "ChangePassword", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminProfilGuncelleRoute",
+                url: "Admin/Profil/Guncelle",
+                defaults: new { controller = "Admin", action = "ProfileUpdate", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminProfilRoute",
+                url: "Admin/Profil",
+                defaults: new { controller = "Admin", action = "AdminProfile", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "CikisYappRoute",
+                url: "Admin/CikisYapp",
+                defaults: new { controller = "Admin", action = "Logout", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "EmailRoute",
                 url: "Admin/Email",
                 defaults: new { controller = "AdminSendEmail", action = "Index", id = UrlParameter.Optional }

@@ -167,5 +167,24 @@ namespace BilBasarEgitim.Mappers
             };
         }
 
+        public static Admin AdminProfileUpdateDtoTo(AdminProfileUpdateDto dto)
+        {
+            return new Admin()
+            {
+                Id = dto.Id,
+                FullName = dto.FullName,
+                Email = dto.Email
+            };
+        }
+
+        public static Admin AdminChangePasswordDtoTo(AdminChangePasswordDto dto)
+        {
+            return new Admin()
+            {
+                Id = dto.Id,
+                Password = dto.NewPassword
+            };
+        }
+
     }
 }

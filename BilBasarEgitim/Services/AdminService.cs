@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using BilBasarEgitim.Mappers;
 using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Models.Entities;
@@ -64,6 +65,54 @@ namespace BilBasarEgitim.Services
             HttpContext.Current.Session["FullName"] = entity.FullName;
             HttpContext.Current.Session["Email"] = entity.Email;
             HttpContext.Current.Session["Id"] = entity.Id;
+        }
+
+        public void Logout()
+        {
+            HttpContext.Current.Session.Abandon();
+            FormsAuthentication.SignOut();
+        }
+
+        public string Update(AdminProfileUpdateDto dto)
+        {
+            try
+            {
+                var model = CustomMapper.AdminProfileUpdateDtoTo(dto);
+                _adminRepository.Update(model);
+                var admin = _adminRepository.GetById(dto.Id);
+                SetSession(admin);
+                return "İşlem Başarılı";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "İşlem Hatası: " + e.Message;
+            }
+           
+        }
+
+        public string UpdatePassword(AdminChangePasswordDto dto)
+        {
+            try
+            {
+                var model = _adminRepository.GetById(dto.Id);
+                if (model.Password != dto.CurrentPassword)
+                {
+                    return "Mevcut Şifre Hatalı";
+                }
+                else
+                {
+                    var admin = CustomMapper.AdminChangePasswordDtoTo(dto);
+                    _adminRepository.UpdatePassword(admin);
+                    return "";
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "";
+            }
+           
         }
     }
 }

@@ -96,5 +96,56 @@ namespace BilBasarEgitim.Repositories.AdminRepository
                 }
             }
         }
+
+        public void Update(Admin entity)
+        {
+            con.Open();
+            string query = "update admins set FullName = @FullName, Email=@Email where Id = @Id";
+            using (MySqlCommand command = new MySqlCommand(query,con))
+            {
+                command.Parameters.AddWithValue("Id", entity.Id);
+                command.Parameters.AddWithValue("FullName", entity.FullName);
+                command.Parameters.AddWithValue("Email", entity.Email);
+                command.ExecuteNonQuery();
+            }
+            con.Close();
+        }
+
+        public Admin GetById(Guid id)
+        {
+            con.Open();
+            string query = "select Id,Email,FullName,Password from admins where Id=@Id";
+            Admin admin = new Admin();
+            using (MySqlCommand command = new MySqlCommand(query,con))
+            {
+                command.Parameters.AddWithValue("Id", id);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        admin.Id = reader.GetGuid("Id");
+                        admin.FullName = reader.GetString("FullName");
+                        admin.Email = reader.GetString("Email");
+                        admin.Password = reader.GetString("Password");
+                    }
+                }
+            }
+            con.Close();
+            return admin;
+        }
+
+        public void UpdatePassword(Admin entity)
+        {
+            con.Open();
+            string query = "update admins set Password = @Password where Id=@Id";
+            using (MySqlCommand command = new MySqlCommand(query,con))
+            {
+                command.Parameters.AddWithValue("Id", entity.Id);
+                command.Parameters.AddWithValue("Password", entity.Password);
+                command.ExecuteNonQuery();
+            }
+            con.Close();
+        }
+
     }
 }

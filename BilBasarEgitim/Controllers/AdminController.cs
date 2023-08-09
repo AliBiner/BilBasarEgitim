@@ -52,7 +52,59 @@ namespace BilBasarEgitim.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            AdminService adminService = new AdminService();
+            adminService.Logout();
+            return RedirectToActionPermanent("Index");
+        }
 
-       
+        [CustomActionFilter]
+        public ActionResult AdminProfile(string result)
+        {
+            if (result == null)
+            {
+                return View();
+            }
+            else
+            {
+                ViewBag.Message = result;
+                return View();
+            }
+        }
+            
+
+        [CustomActionFilter]
+        public ActionResult ProfileUpdate()
+        {
+            return PartialView();
+        }
+
+        [CustomActionFilter]
+        [HttpPost]
+        public ActionResult ProfileUpdate(AdminProfileUpdateDto dto)
+        {
+            AdminService adminService = new AdminService();
+            adminService.Update(dto);
+            return RedirectToActionPermanent("AdminProfile");
+        }
+
+
+        [CustomActionFilter]
+        public ActionResult ChangePassword()
+        {
+            return PartialView();
+        }
+
+        [CustomActionFilter]
+        [HttpPost]
+        public ActionResult ChangePassword(AdminChangePasswordDto dto)
+        {
+            AdminService adminService = new AdminService();
+            var result = adminService.UpdatePassword(dto);
+            return RedirectToActionPermanent("AdminProfile","Admin",new {result = result});
+        }
+
     }
 }

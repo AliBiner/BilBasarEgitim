@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using BilBasarEgitim.Mappers;
 using BilBasarEgitim.Methods;
 using BilBasarEgitim.Models.Dtos;
+using BilBasarEgitim.Repositories.AdminRepository;
 using BilBasarEgitim.Repositories.JobApplyRepository;
 
 namespace BilBasarEgitim.Services
@@ -21,7 +23,22 @@ namespace BilBasarEgitim.Services
                 var model = CustomMapper.JobAppealAddDtoTo(dto);
                 model.CvUrl = cvurl;
                 _jobApplyRepository.Add(model);
-                return "İşlem Başarılı";
+                //SendEmailService sendEmail = new SendEmailService();
+                //var email = sendEmail.GetEmail().Email;
+                //using (var client = new HttpClient())
+                //{
+                //    var content = new FormUrlEncodedContent(new[]
+                //    {
+                //        new KeyValuePair<string, string>("SendEmail",email),
+                //        new KeyValuePair<string, string>("Subject","İş Başvurusu"),
+                //        new KeyValuePair<string, string>("AdSoyad",dto.FullName),
+                //        new KeyValuePair<string, string>("Email",dto.Email),
+                //        new KeyValuePair<string, string>("Telefon",dto.Phone),
+                //        new KeyValuePair<string, string>("Date",CustomMethod.TurkeyTime().ToString("dd/MM/yyyy HH:mm"))
+                //    });
+                //    var response = client.PostAsync("https://localhost:44398/Mail/Mail.php", content);
+                //}
+                return "";
             }
             catch (Exception e)
             {
