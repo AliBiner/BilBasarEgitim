@@ -17,5 +17,7 @@ namespace BilBasarEgitim.Models.Entities
         
 
         public List<Document> Documents { get; set; }
+        public List<Slider> Sliders { get; set; }
+        
     }
 }

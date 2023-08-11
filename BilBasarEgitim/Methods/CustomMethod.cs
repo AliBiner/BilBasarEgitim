@@ -31,7 +31,11 @@ namespace BilBasarEgitim.Methods
             file.SaveAs(physicalPath);
             return fileName;
         }
-
+        public static void CvDelete(string cvUrl)
+        {
+            string filePath = HttpContext.Current.Server.MapPath("~/Upload/Cvs/" + cvUrl);
+            System.IO.File.Delete(filePath);
+        }
         public static string DocumentUpload(HttpPostedFileBase file)
         {
             string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
@@ -42,15 +46,20 @@ namespace BilBasarEgitim.Methods
             return fileName;
         }
 
-        public static void CvDelete(string cvUrl)
-        {
-            string filePath = HttpContext.Current.Server.MapPath("~/Upload/Cvs/" + cvUrl);
-            System.IO.File.Delete(filePath);
-        }
         public static void DocumentDelete(string documentUrl)
         {
             string filePath = HttpContext.Current.Server.MapPath("~/Upload/Documents/" + documentUrl);
             System.IO.File.Delete(filePath);
         }
+        public static string ImageUpload(HttpPostedFileBase file)
+        {
+            string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
+            string virtualPath = "~/Upload/Images/News" + fileName;
+            string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);
+
+            file.SaveAs(physicalPath);
+            return fileName;
+        }
+
     }
 }

@@ -23,12 +23,11 @@
     </noscript>
     <link rel="preload" as="style" href="~/assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="~/assets/mobirise/css/mbr-additional.css" type="text/css">
-
-    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="~/assets/css/Slider.css" rel="stylesheet" />
 </head>
 <body>
     <section data-bs-version="5.1" class="menu menu1 cid-tHf4Bu2T7y" once="menu" id="menu1-0">
-        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg" style="position: relative; height: 100%">
             <div class="container-fluid">
                 <div class="navbar-brand">
                     <span class="navbar-logo">
@@ -45,7 +44,7 @@
                         <span></span>
                     </div>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex: 1;">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="/Anasayfa">Ana Sayfa</a></li>
                         <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-4" href="https://mobiri.se" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Hakkımızda</a><div class="dropdown-menu" aria-labelledby="dropdown-236"><a class="text-white dropdown-item text-primary display-4" href="/Hakkında">Biz Kimiz?</a><a class="text-white dropdown-item text-primary display-4" href="/Akademik-Kadro">Akademik Kadro</a><a class="text-white dropdown-item text-primary display-4" href="/Yol-Haritası">Yol Haritamız</a><a class="text-white dropdown-item text-primary display-4" href="/Subeler">Şubelerimiz</a></div></li>
@@ -57,7 +56,7 @@
                         <li class="nav-item"><a class="nav-link link text-white show text-primary display-4" href="/Öğrenci-Portalı">Öğrenci Portal</a></li>
                         <li class="nav-item"><a class="nav-link link text-white show text-primary display-4" href="/Insan-Kaynakları">İnsan Kaynakları<br></a></li>
                         <li class="nav-item"><a class="nav-link link text-white show text-primary display-4" href="/Iletisim">İletişim<br></a></li>
-                        <li class="nav-item"><a class="nav-link link text-white show text-primary display-4" href="/Admin">Admin<br></a></li>
+                        @*<li class="nav-item"><a class="nav-link link text-white show text-primary display-4" href="/Admin">Admin<br></a></li>*@
                     </ul>
 
                     <div class="navbar-buttons mbr-section-btn"><a class="btn btn-secondary display-4" href="/Basvuru">Başvuru</a></div>
@@ -65,15 +64,12 @@
             </div>
         </nav>
     </section>
-    <div class="">
-        @RenderBody()
-    </div>
+<div>
+    @RenderBody()
+</div>
+  
+   
     <section data-bs-version="5.1" class="footer3 cid-tHfHtJnpMJ" once="footers" id="footer3-8">
-
-
-
-
-
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row row-links">
@@ -83,21 +79,15 @@
 
 
 
-                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="hakkimizda.html" class="text-white">Hakkımızda</a></li>
-                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="galeri.html" class="text-white">Galeri</a></li>
-                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="ogrenci_portal.html" class="text-white">Öğrenci Portalı</a></li>
-                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="insan_kaynaklari.html" class="text-white">İnsan Kaynakları</a></li>
-                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="iletisim.html" class="text-white">İletişim</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Hakkında" class="text-white">Hakkımızda</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Galeri" class="text-white">Galeri</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Öğrenci-Portalı" class="text-white">Öğrenci Portalı</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Insan-Kaynakları" class="text-white">İnsan Kaynakları</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/Iletisim" class="text-white">İletişim</a></li>
                     </ul>
                 </div>
                 <div class="row social-row">
                     <div class="social-list align-right pb-2">
-
-
-
-
-
-
                         <div class="soc-item">
                             <a href="https://twitter.com/AnkaraBilbasar?s=20" target="_blank">
                                 <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
@@ -136,7 +126,6 @@
     <script src="~/assets/playervimeo/vimeo_player.js"></script>
     <script src="~/assets/theme/js/script.js"></script>
 <script src="~/assets/formoid/formoid.min.js"></script>
-<script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
 </body>
 
 </html>

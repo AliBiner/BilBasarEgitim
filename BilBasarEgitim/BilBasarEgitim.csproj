@@ -201,6 +201,7 @@
     <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\css\Slider.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\dropdown\css\style.css" />
     <Content Include="assets\dropdown\js\navbar-dropdown.js" />
@@ -509,10 +510,6 @@
     <Content Include="assets\web\assets\mobirise-icons2\mobirise2.svg" />
     <Content Include="assets\ytplayer\index.js" />
     <Content Include="Global.asax" />
-    <Content Include="Mail\Mail.php" />
-    <Content Include="Mail\PHPMailer\Exception.php" />
-    <Content Include="Mail\PHPMailer\PHPMailer.php" />
-    <Content Include="Mail\PHPMailer\SMTP.php" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -524,6 +521,7 @@
     <Compile Include="Controllers\AdminEducationApplyController.cs" />
     <Compile Include="Controllers\AdminJobApplyController.cs" />
     <Compile Include="Controllers\AdminSendEmailController.cs" />
+    <Compile Include="Controllers\AdminSliderController.cs" />
     <Compile Include="Controllers\ApplyController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
@@ -556,6 +554,7 @@
     <Compile Include="Models\Entities\EducationalApply.cs" />
     <Compile Include="Models\Entities\JobApply.cs" />
     <Compile Include="Models\Entities\SendEmail.cs" />
+    <Compile Include="Models\Entities\Slider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdminRepository\AdminRepository.cs" />
     <Compile Include="Repositories\DocumentRepository.cs" />
@@ -670,7 +669,6 @@
     <Content Include="Views\Apply\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\HumanResources\Index.cshtml" />
     <Content Include="Views\Information\News.cshtml" />
     <Content Include="Views\Information\Notice.cshtml" />
@@ -692,6 +690,7 @@
     <Content Include="Views\Admin\AdminProfile.cshtml" />
     <Content Include="Views\Admin\ProfileUpdate.cshtml" />
     <Content Include="Views\Admin\ChangePassword.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -704,6 +703,8 @@
     <Folder Include="Context\" />
     <Folder Include="Upload\Cvs\" />
     <Folder Include="Upload\Documents\" />
+    <Folder Include="Upload\Images\News\" />
+    <Folder Include="Views\AdminSlider\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\vendor\tinymce\tinymce.d.ts" />
