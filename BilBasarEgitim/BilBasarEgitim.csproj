@@ -548,6 +548,7 @@
     <Compile Include="Models\Dtos\JobApplyPreviewDto.cs" />
     <Compile Include="Models\Dtos\JopApplyAddDto.cs" />
     <Compile Include="Models\Dtos\SendEmailDto.cs" />
+    <Compile Include="Models\Dtos\SliderAddDto.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Document.cs" />

@@ -186,5 +186,15 @@ namespace BilBasarEgitim.Mappers
             };
         }
 
+        public static Slider SliderAddDtoTo(SliderAddDto dto)
+        {
+            return new Slider()
+            {
+                ImageUrl = dto.ImageUrl,
+                AdminId = dto.AdminId,
+                Check = dto.Check
+            };
+        }
+
     }
 }
