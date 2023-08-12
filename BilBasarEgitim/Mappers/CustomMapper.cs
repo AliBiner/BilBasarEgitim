@@ -190,10 +190,54 @@ namespace BilBasarEgitim.Mappers
         {
             return new Slider()
             {
-                ImageUrl = dto.ImageUrl,
                 AdminId = dto.AdminId,
                 Check = dto.Check
             };
+        }
+
+        public static List<SliderForAdminDto> ToSlidersDto(List<Slider> entity)
+        {
+            List<SliderForAdminDto> sliders = new List<SliderForAdminDto>();
+            foreach (var i in entity)
+            {
+                var slider = new SliderForAdminDto();
+                if (i.Check == true)
+                {
+
+                    slider.Id = i.Id;
+                    slider.CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm");
+                    slider.SliderUrl = i.ImageUrl;
+                    slider.Check = "Yayında";
+
+                }
+                else
+                {
+                    slider.Id = i.Id;
+                    slider.CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm");
+                    slider.SliderUrl = i.ImageUrl;
+                    slider.Check = "Yayında Değil";
+
+                }
+               sliders.Add(slider);
+            }
+
+            return sliders;
+        }
+
+        public static List<SliderForUserDto> ToSliderForUserDto(List<Slider> entity)
+        {
+            List<SliderForUserDto> sliders = new List<SliderForUserDto>();
+            foreach (var VARIABLE in entity)
+            {
+                var slider = new SliderForUserDto()
+                {
+                    SliderUrl = VARIABLE.ImageUrl
+                };
+                sliders.Add(slider);
+            }
+
+            return sliders;
+
         }
 
     }

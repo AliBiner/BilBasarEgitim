@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using Microsoft.Ajax.Utilities;
 
 namespace BilBasarEgitim.Methods
 {
@@ -24,6 +25,10 @@ namespace BilBasarEgitim.Methods
 
         public static string CvUpload(HttpPostedFileBase file)
         {
+            if (file == null)
+            {
+                return null;
+            }
             string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
             string virtualPath = "~/Upload/Cvs/" + fileName;
             string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);
@@ -38,6 +43,10 @@ namespace BilBasarEgitim.Methods
         }
         public static string DocumentUpload(HttpPostedFileBase file)
         {
+            if (file==null)
+            {
+                return null;
+            }
             string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
             string virtualPath = "~/Upload/Documents/" + fileName;
             string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);
@@ -51,15 +60,21 @@ namespace BilBasarEgitim.Methods
             string filePath = HttpContext.Current.Server.MapPath("~/Upload/Documents/" + documentUrl);
             System.IO.File.Delete(filePath);
         }
-        public static string ImageUpload(HttpPostedFileBase file)
+        public static string SliderImageUpload(HttpPostedFileBase file)
         {
+            if (file== null)
+            {
+                return null;
+            }
             string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
-            string virtualPath = "~/Upload/Images/News" + fileName;
+            string virtualPath = "~/Upload/Images/Slider/" + fileName;
             string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);
 
             file.SaveAs(physicalPath);
             return fileName;
+
         }
+
 
     }
 }

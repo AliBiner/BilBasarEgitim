@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BilBasarEgitim.Repositories.AdminRepository;
+using BilBasarEgitim.Services;
 
 namespace BilBasarEgitim.Controllers
 {
@@ -12,7 +13,9 @@ namespace BilBasarEgitim.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            SliderService sliderService = new SliderService();
+            var model = sliderService.GetAllOnlyUrl();
+            return View(model);
         }
     }
 }

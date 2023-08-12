@@ -317,6 +317,7 @@
     <Content Include="assets\img\slides-3.jpg" />
     <Content Include="assets\js\adminsliderpreview.js" />
     <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\sliderupload.js" />
     <Content Include="assets\mobirise\css\mbr-additional.css" />
     <Content Include="assets\playervimeo\vimeo_player.js" />
     <Content Include="assets\smoothscroll\smooth-scroll.js" />
@@ -522,6 +523,11 @@
     <Content Include="assets\web\assets\mobirise-icons2\mobirise2.svg" />
     <Content Include="assets\ytplayer\index.js" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -561,6 +567,9 @@
     <Compile Include="Models\Dtos\JopApplyAddDto.cs" />
     <Compile Include="Models\Dtos\SendEmailDto.cs" />
     <Compile Include="Models\Dtos\SliderAddDto.cs" />
+    <Compile Include="Models\Dtos\SliderForAdminDto.cs" />
+    <Compile Include="Models\Dtos\SliderForUserDto.cs" />
+    <Compile Include="Models\Dtos\SliderUpdateDto.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Document.cs" />
@@ -707,6 +716,9 @@
     <Content Include="Views\Admin\ChangePassword.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AdminSlider\Upload.cshtml" />
+    <Content Include="Views\AdminSlider\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -720,6 +732,7 @@
     <Folder Include="Upload\Cvs\" />
     <Folder Include="Upload\Documents\" />
     <Folder Include="Upload\Images\News\" />
+    <Folder Include="Upload\Images\Slider\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\vendor\tinymce\tinymce.d.ts" />

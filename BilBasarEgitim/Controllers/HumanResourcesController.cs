@@ -22,6 +22,7 @@ namespace BilBasarEgitim.Controllers
             JobApplyService applyService = new JobApplyService();
             var result = applyService.AddJobAppealWithCv(dto,cv);
             ViewBag.Error = result;
+            Response.Cache.SetNoStore();
             return View();
         }
     }

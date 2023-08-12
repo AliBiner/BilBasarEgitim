@@ -11,6 +11,7 @@ namespace BilBasarEgitim.Controllers
         // GET: TrainingPublication
         public ActionResult Index()
         {
+            Response.Cache.SetNoStore();
             return View();
         }
     }

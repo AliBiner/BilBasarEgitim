@@ -1,4 +1,4 @@
-﻿
+﻿@model List<BilBasarEgitim.Models.Dtos.SliderForUserDto>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -6,46 +6,39 @@
 
 <section data-bs-version="5.1" class="slider1 cid-tHf6nDD0s4 " id="slider1-1">
     @*data-interval="5000" data-bs-interval="5000"*@
-    <div class="carousel slide carousel-fade" id="tL2YTQPxni" data-ride="carousel" data-bs-ride="carousel">
+    <div class="carousel slide carousel-fade" id="tL2YTQPxni" data-ride="carousel" data-bs-ride="carousel" data-interval="5000" data-bs-interval="5000">
         <ol class="carousel-indicators">
-            <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
-            <li data-slide-to="1" data-bs-slide-to="1" class="" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
-            <li data-slide-to="2" data-bs-slide-to="2" class="" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
-            <li data-slide-to="3" data-bs-slide-to="3" class="" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
-            <li data-slide-to="4" data-bs-slide-to="4" class="" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                if (i == 0)
+                {
+                    <li data-slide-to="@i" data-bs-slide-to="@i" class="active" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
+
+
+                }
+                else
+                {
+                    <li data-slide-to="@i" data-bs-slide-to="@i" class="" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
+                }
+
+
+            }
+
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item slider-image item active">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="~/assets/images/slider-1-1900x1200.png" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0">
-
-
+            @{
+                int j = 0;
+            }
+            @foreach (var item in Model)
+            {
+                <div class="carousel-item slider-image item @(j==0 ? "active":"")">
+                    <div class="item-wrapper">
+                        <img class="d-block w-100" src="~/Upload/Images/Slider/@item.SliderUrl" data-slide-to="@j" data-bs-slide-to="@j">
+                    </div>
                 </div>
-            </div><div class="carousel-item slider-image item">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="~/assets/images/slider2-1900x1200.png" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1">
+                j++;
+            }
 
-
-                </div>
-            </div><div class="carousel-item slider-image item">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="~/assets/images/web-sitesi-2.png" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2">
-
-
-                </div>
-            </div><div class="carousel-item slider-image item">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="~/assets/images/bvca.png" alt="Mobirise Website Builder" data-slide-to="3" data-bs-slide-to="3">
-
-
-                </div>
-            </div><div class="carousel-item slider-image item">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="~/assets/images/anasayfa-slayt-f706d77aad37aae.jpg" alt="Mobirise Website Builder" data-slide-to="4" data-bs-slide-to="4">
-
-
-                </div>
-            </div>
         </div>
         <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" data-bs-slide="prev" href="#tL2YTQPxni">
             <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>

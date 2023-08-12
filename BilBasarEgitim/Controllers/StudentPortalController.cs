@@ -15,6 +15,7 @@ namespace BilBasarEgitim.Controllers
         public ActionResult Index()
         {
             var model = documentService.GetAll();
+            Response.Cache.SetNoStore();
             return View(model);
         }
     }

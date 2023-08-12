@@ -13,18 +13,41 @@ namespace BilBasarEgitim
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
+                name: "AdminSliderSilRoute",
+                url: "admin/slider/sil/{id}",
+                defaults: new { controller = "AdminSlider", action = "Delete", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminSliderYayinlaRoute",
+                url: "admin/slider/yayin-durumu/{id}",
+                defaults: new { controller = "AdminSlider", action = "UpdateRelease", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminSliderRoute",
+                url: "admin/slider",
+                defaults: new { controller = "AdminSlider", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminSliderYukleRoute",
+                url: "admin/slider/yukle/{id}",
+                defaults: new { controller = "AdminSlider", action = "Upload", id = UrlParameter.Optional }
+            );
+
+
+            routes.MapRoute(
                 name: "AdminProfilSifreDegisterRoute",
-                url: "Admin/Profil/SifreDegister",
+                url: "admin/profil/sifre-degister",
                 defaults: new { controller = "Admin", action = "ChangePassword", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "AdminProfilGuncelleRoute",
-                url: "Admin/Profil/Guncelle",
+                url: "admin/profil/guncelle",
                 defaults: new { controller = "Admin", action = "ProfileUpdate", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "AdminProfilRoute",
-                url: "Admin/Profil",
+                url: "admin/profil",
                 defaults: new { controller = "Admin", action = "AdminProfile", id = UrlParameter.Optional }
             );
 
@@ -36,162 +59,162 @@ namespace BilBasarEgitim
 
             routes.MapRoute(
                 name: "EmailRoute",
-                url: "Admin/Email",
+                url: "admin/email",
                 defaults: new { controller = "AdminSendEmail", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "DokumanlarRoute",
-                url: "Admin/Dokumanlar",
+                url: "admin/dokumanlar",
                 defaults: new { controller = "AdminDocument", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "DokumanYukleRoute",
-                url: "Admin/Dokumanlar/Yukle",
+                url: "admin/dokumanlar/yukle",
                 defaults: new { controller = "AdminDocument", action = "Add", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "DokumanlarSillRoute",
-                url: "Admin/Dokumanlar/Sill/{id}",
+                url: "admin/dokumanlar/sill/{id}",
                 defaults: new { controller = "AdminDocument", action = "Delete", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "EgitimBasvuruOnaylananlarRoute",
-                url: "Admin/EgitimBasvuru/Onaylananlar",
+                url: "admin/egitim-basvuru/onaylananlar",
                 defaults: new { controller = "AdminEducationApply", action = "GetAllApproval", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "EgitimBasvuruOnayRoute",
-                url: "Admin/EgitimBasvuru/Onay/{id}",
+                url: "admin/egitim-basvuru/onay/{id}",
                 defaults: new { controller = "AdminEducationApply", action = "Approval", id = UrlParameter.Optional }
             ); 
             routes.MapRoute(
                 name: "EgitimBasvuruSilRoute",
-                url: "Admin/EgitimBasvuru/Sil/{id}",
+                url: "admin/egitim-basvuru/sil/{id}",
                 defaults: new { controller = "AdminEducationApply", action = "Delete", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "EgitimBasvuruDetayRoute",
-                url: "Admin/EgitimBasvuru/Detay/{id}",
+                url: "admin/egitim-basvuru/detay/{id}",
                 defaults: new { controller = "AdminEducationApply", action = "EducationalApplyDetail", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "EgitimBasvuruRoute",
-                url: "Admin/EgitimBasvuru",
+                url: "admin/egitim-basvuru",
                 defaults: new { controller = "AdminEducationApply", action = "EducationalApply", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "IsBasvuruOnaylananlarRoute",
-                url: "Admin/IsBasvuru/Onaylananlar",
+                url: "admin/is-basvuru/onaylananlar",
                 defaults: new { controller = "AdminJobApply", action = "GetAllApproval", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "DetayRoute",
-                url: "Admin/IsBasvuru/Detay/{id}",
+                url: "admin/is-basvuru/detay/{id}",
                 defaults: new { controller = "AdminJobApply", action = "JobApplyDetail", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "OnaylaRoute",
-                url: "Admin/IsBasvuru/Onayla/{id}",
+                url: "admin/is-basvuru/onayla/{id}",
                 defaults: new { controller = "AdminJobApply", action = "Approval", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "ReddetRoute",
-                url: "Admin/IsBasvuru/Reddet/{id}",
+                url: "admin/is-basvuru/reddet/{id}",
                 defaults: new { controller = "AdminJobApply", action = "Delete", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "IsBasvuruRoute",
-                url: "Admin/IsBasvuru",
+                url: "admin/is-basvuru",
                 defaults: new { controller = "AdminJobApply", action = "JobApply", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "KayitOlRoute",
-                url: "KayitOl",
+                url: "kayit-ol",
                 defaults: new { controller = "Admin", action = "Register", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "GirisYapRoute",
-                url: "GirisYap",
+                url: "giris-yap",
                 defaults: new { controller = "Admin", action = "Login", id = UrlParameter.Optional }
             );
             routes.MapRoute(
              name: "AnasayfaRoute",
-             url: "Anasayfa",
+             url: "anasayfa",
              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
          );
 
             routes.MapRoute(
                 name: "HakkındaRoute",
-                url: "Hakkında",
+                url: "hakkında",
                 defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Akademik-KadroRoute",
-                url: "Akademik-Kadro",
+                url: "akademik-kadro",
                 defaults: new { controller = "About", action = "AcademicStaff", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Yol-HaritasıRoute",
-                url: "Yol-Haritası",
+                url: "yol-haritasi",
                 defaults: new { controller = "About", action = "RoadMap", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "SubelerRoute",
-                url: "Subeler",
+                url: "subeler",
                 defaults: new { controller = "About", action = "Branches", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "HaberlerRoute",
-                url: "Haberler",
+                url: "haberler",
                 defaults: new { controller = "Information", action = "News", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "DuyurularRoute",
-                url: "Duyurular",
+                url: "duyurular",
                 defaults: new { controller = "Information", action = "Notice", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "GaleriRoute",
-                url: "Galeri",
+                url: "galeri",
                 defaults: new { controller = "Gallery", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "YayınlarRoute",
-                url: "Yayınlar",
+                name: "YayinlarRoute",
+                url: "yayinlar",
                 defaults: new { controller = "TrainingPublication", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Öğrenci-PortalıRoute",
-                url: "Öğrenci-Portalı",
+                url: "ogrenci-portali",
                 defaults: new { controller = "StudentPortal", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Insan-KaynaklarıRoute",
-                url: "Insan-Kaynakları",
+                url: "insan-kaynaklari",
                 defaults: new { controller = "HumanResources", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "IletisimRoute",
-                url: "Iletisim",
+                url: "iletisim",
                 defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "BasvuruRoute",
-                url: "Basvuru",
+                url: "basvuru",
                 defaults: new { controller = "Apply", action = "Index", id = UrlParameter.Optional }
             );
 

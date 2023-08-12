@@ -17,6 +17,7 @@ namespace BilBasarEgitim.Controllers
         public ActionResult EducationalApply()
         {
             var model = _educationalApplyService.GetAll();
+            Response.Cache.SetNoStore();
             return View(model);
             
             
@@ -25,6 +26,7 @@ namespace BilBasarEgitim.Controllers
         public ActionResult EducationalApplyDetail(Guid id)
         {
             var model = _educationalApplyService.GetById(id);
+            Response.Cache.SetNoStore();
             return View(model);
         }
 
@@ -32,17 +34,20 @@ namespace BilBasarEgitim.Controllers
         public ActionResult Delete(Guid id)
         {
             _educationalApplyService.DeleteById(id);
+            Response.Cache.SetNoStore();
             return RedirectToAction("EducationalApply");
         }
         [HttpGet]
         public ActionResult Approval(Guid id)
         {
             _educationalApplyService.UpdateById(id);
+            Response.Cache.SetNoStore();
             return RedirectToAction("EducationalApply");
         }
         public ActionResult GetAllApproval()
         {
             var model =_educationalApplyService.GetAllForApproval();
+            Response.Cache.SetNoStore();
             return View(model);
         }
 

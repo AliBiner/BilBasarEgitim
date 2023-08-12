@@ -16,12 +16,14 @@ namespace BilBasarEgitim.Controllers
         public ActionResult Index()
         {
             var model =_emailService.GetEmail();
+            Response.Cache.SetNoStore();
             return View(model);
         }
         [HttpPost]
         public ActionResult Index(Guid id , string Email)
         {
             _emailService.UpdateByEmail(id, Email);
+            Response.Cache.SetNoStore();
             return RedirectToActionPermanent("Index");
         }
     }

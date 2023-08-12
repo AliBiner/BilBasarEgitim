@@ -14,14 +14,15 @@ namespace BilBasarEgitim.Repositories
         public void Add(Slider entity)
         {
             _connection.Open();
-            string query = "insert into (Id,imageUrl,createDate,adminId,sliderCheck) values (@Id,@imageUrl,@createDate,@adminId,@sliderCheck)";
+            string query = "insert into sliders (id,imageUrl,createDate,adminId,sliderCheck) values (@id,@imageUrl,@createDate,@adminId,@sliderCheck)";
             using (MySqlCommand command = new MySqlCommand(query,_connection))
             {
-                command.Parameters.AddWithValue("Id", Guid.NewGuid());
+                command.Parameters.AddWithValue("id", Guid.NewGuid());
                 command.Parameters.AddWithValue("imageUrl", entity.ImageUrl);
                 command.Parameters.AddWithValue("createDate", CustomMethod.TurkeyTime());
                 command.Parameters.AddWithValue("adminId", entity.AdminId);
                 command.Parameters.AddWithValue("sliderCheck", entity.Check);
+                command.ExecuteNonQuery();
             }
             _connection.Close();
         }
@@ -29,11 +30,11 @@ namespace BilBasarEgitim.Repositories
         public void Update(Slider entitiy)
         {
             _connection.Open();
-            string query = "update sliders set imageUrl=@imageUrl, updateDate=@updateDate, sliderCheck=@sliderCheck where Id=@Id";
+            string query = "update sliders set updateDate=@updateDate, sliderCheck=@sliderCheck where Id=@Id";
             using (MySqlCommand command = new MySqlCommand(query,_connection))
             {
                 command.Parameters.AddWithValue("Id", entitiy.Id);
-                command.Parameters.AddWithValue("imageUrl", entitiy.ImageUrl);
+                //command.Parameters.AddWithValue("imageUrl", entitiy.ImageUrl);
                 command.Parameters.AddWithValue("updateDate", CustomMethod.TurkeyTime());
                 command.Parameters.AddWithValue("sliderCheck", entitiy.Check);
                 command.ExecuteNonQuery();
@@ -83,7 +84,7 @@ namespace BilBasarEgitim.Repositories
         public List<Slider> GetAllNotDelete()
         {
             _connection.Open();
-            string query = "select * from sliders where deleteDate is null and sliderCheck = false";
+            string query = "select * from sliders where deleteDate is null";
             List<Slider> sliders = new List<Slider>();
             using (MySqlCommand command = new MySqlCommand(query,_connection))
             {
@@ -99,6 +100,31 @@ namespace BilBasarEgitim.Repositories
                             AdminId = reader.GetGuid("adminId"),
                             CreateDate = reader.GetDateTime("createDate"),
                             UpdateDate = reader.GetDateTime("updateDate")
+                        };
+
+                        sliders.Add(slider);
+                    }
+                }
+            }
+            _connection.Close();
+            return sliders;
+        }
+
+
+        public List<Slider> GetAllOnlyUrl()
+        {
+            _connection.Open();
+            string query = "select imageUrl from sliders where deleteDate is null and sliderCheck = true";
+            List<Slider> sliders = new List<Slider>();
+            using (MySqlCommand command = new MySqlCommand(query,_connection))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Slider slider = new Slider()
+                        {
+                            ImageUrl = reader.GetString("imageUrl")
                         };
                         sliders.Add(slider);
                     }

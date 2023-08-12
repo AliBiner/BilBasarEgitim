@@ -17,7 +17,9 @@ namespace BilBasarEgitim.Controllers
         // GET: AdminDocument
         public ActionResult Index()
         {
+
             var model = _documentService.GetAll();
+            Response.Cache.SetNoStore();
             return View(model);
            
            
@@ -30,6 +32,7 @@ namespace BilBasarEgitim.Controllers
         public ActionResult Add(DocumentAddDto dto ,HttpPostedFileBase document)
         {
             _documentService.Add(dto, document);
+            Response.Cache.SetNoStore();
             return RedirectToActionPermanent("Index");
         }
 
@@ -37,6 +40,7 @@ namespace BilBasarEgitim.Controllers
         public ActionResult Delete(Guid id)
         {
             _documentService.Delete(id);
+            Response.Cache.SetNoStore();
             return RedirectToAction("Index");
 
         }
