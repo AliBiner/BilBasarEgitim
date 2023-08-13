@@ -12,6 +12,32 @@ namespace BilBasarEgitim
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "AdminGaleriDuzenleRoute",
+                url: "admin/galeri/duzenle",
+                defaults: new { controller = "AdminGallery", action = "Placement", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminGaleriSilRoute",
+                url: "admin/galeri/sil/{id}",
+                defaults: new { controller = "AdminGallery", action = "Delete", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminGaleriYayinlaRoute",
+                url: "admin/galeri/yayin-durumu/{id}",
+                defaults: new { controller = "AdminGallery", action = "UpdateRelease", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminGaleriRoute",
+                url: "admin/galeri",
+                defaults: new { controller = "AdminGallery", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminGaleriYukleRoute",
+                url: "admin/galeri/yukle/{id}",
+                defaults: new { controller = "AdminGallery", action = "Upload", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "AdminAkademikKadroSilRoute",

@@ -1,5 +1,5 @@
 ﻿
-
+//Slider
 $(document).ready(function () {
     $('#slider-upload').submit(function (event) {
         event.preventDefault(); // () parantezlerini ekleyin
@@ -28,6 +28,57 @@ $(document).ready(function () {
     });
 });
 
+//Gallery
+$(document).ready(function () {
+    $('#gallery-upload').submit(function (event) {
+        event.preventDefault(); // () parantezlerini ekleyin
+
+        var formData = new FormData(this);
+        var fileInput = document.getElementById("fileInput");
+        var file = fileInput.files[0];
+        formData.append("ImageUrl", file);
+
+        $.ajax({
+            type: "POST",
+            url: "/admin/galeri/yukle",
+            data: formData,
+            processData: false,
+            contentType: false, // contentType olarak düzeltin
+            success: function (response) {
+                $('#errorModalMessage').html(response);
+                $('#errorModal').modal('show');
+
+            },
+            error: function () {
+                $('#errorModalMessage').html(response);
+                $('#errorModal').modal('show');
+            }
+        });
+    });
+});
+$(document).ready(function () {
+    $('#submitButton').click(function () {
+        var products = []; // Doldurulacak ürün listesi
+        // products listesini doldurmak için gerekli kodlar
+
+        var data = { Products: products };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("PostProducts", "Product")',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (result) {
+                // Başarılı yanıt işlemleri
+            },
+            error: function () {
+                // Hata işlemleri
+            }
+        });
+    });
+});
+
+//Notice
 $(document).ready(function () {
     $('#notice-upload').submit(function (event) {
         event.preventDefault(); // () parantezlerini ekleyin
@@ -84,6 +135,7 @@ $(document).ready(function () {
     });
 });
 
+//News
 $(document).ready(function () {
     $('#news-upload').submit(function (event) {
         event.preventDefault(); // () parantezlerini ekleyin
@@ -140,6 +192,7 @@ $(document).ready(function () {
     });
 });
 
+//Academic Staff
 $(document).ready(function () {
     $('#academic-staff-upload').submit(function (event) {
         event.preventDefault(); // () parantezlerini ekleyin

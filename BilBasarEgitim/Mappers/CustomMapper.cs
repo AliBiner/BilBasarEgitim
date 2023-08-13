@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Models.Dtos.AcademicStaff;
+using BilBasarEgitim.Models.Dtos.Gallery;
 using BilBasarEgitim.Models.Dtos.News;
 using BilBasarEgitim.Models.Entities;
 using BilBasarEgitim.Models.News;
@@ -560,6 +561,82 @@ namespace BilBasarEgitim.Mappers
             }
 
             return academics;
+        }
+
+        //Gallery
+        public static Gallery GalleryAddDtoTo(GalleryAddDto dto)
+        {
+            return new Gallery()
+            {
+                AdminId = dto.AdminId,
+                Check = dto.Check,
+                Description = dto.Description
+            };
+        }
+        public static List<GalleryForAdminDto> ToGalleriesDto(List<Gallery> entity)
+        {
+            List<GalleryForAdminDto> galleries = new List<GalleryForAdminDto>();
+            foreach (var i in entity)
+            {
+                var gallery = new GalleryForAdminDto();
+                if (i.Check == true)
+                {
+
+                    gallery.Id = i.Id;
+                    gallery.CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm");
+                    gallery.ImageUrl = i.ImageUrl;
+                    gallery.Description = i.Description;
+                    gallery.Check = "Yayında";
+
+                }
+                else
+                {
+                    gallery.Id = i.Id;
+                    gallery.CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm");
+                    gallery.ImageUrl = i.ImageUrl;
+                    gallery.Description = i.Description;
+                    gallery.Check = "Yayında Değil";
+
+                }
+                galleries.Add(gallery);
+            }
+
+            return galleries;
+        }
+        public static List<GalleryForUserDto> ToGalleriesForUserDto(List<Gallery> entity)
+        {
+            List<GalleryForUserDto> galleries = new List<GalleryForUserDto>();
+            foreach (var VARIABLE in entity)
+            {
+                var gallery = new GalleryForUserDto()
+                {
+                    ImageUrl = VARIABLE.ImageUrl,
+                    Description = VARIABLE.Description
+                };
+                galleries.Add(gallery);
+            }
+
+            return galleries;
+
+        }
+
+        public static List<GalleryPlacementDto> ToGalleryPlacementDtos(List<Gallery> entity)
+        {
+            List<GalleryPlacementDto> galleries = new List<GalleryPlacementDto>();
+            foreach (var item in entity)
+            {
+                GalleryPlacementDto gallery = new GalleryPlacementDto()
+                {
+                    Id = item.Id,
+                    ImageUrl = item.ImageUrl,
+                    Description = item.Description,
+                    Placement = item.Placement,
+                    Check = item.Check
+                };
+                galleries.Add(gallery);
+            }
+
+            return galleries;
         }
     }
 }

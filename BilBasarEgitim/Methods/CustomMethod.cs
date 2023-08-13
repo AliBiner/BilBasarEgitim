@@ -148,5 +148,27 @@ namespace BilBasarEgitim.Methods
             string filePath = HttpContext.Current.Server.MapPath("~/Upload/Images/AcademicStaff/" + documentUrl);
             System.IO.File.Delete(filePath);
         }
+
+        //Gallery Image Process
+
+        public static string GalleryImageUpload(HttpPostedFileBase file)
+        {
+            if (file == null)
+            {
+                return null;
+            }
+            string fileName = Guid.NewGuid().ToString() + "-" + Path.GetFileName(file.FileName);
+            string virtualPath = "~/Upload/Images/Gallery/" + fileName;
+            string physicalPath = HttpContext.Current.Server.MapPath(virtualPath);
+
+            file.SaveAs(physicalPath);
+            return fileName;
+
+        }
+        public static void GalleryImageDelete(string documentUrl)
+        {
+            string filePath = HttpContext.Current.Server.MapPath("~/Upload/Images/Gallery/" + documentUrl);
+            System.IO.File.Delete(filePath);
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace BilBasarEgitim.Models.Entities
             Notices = new List<Notice>();
             News = new List<News>();
             AcademicStaffs = new List<AcademicStaff>();
+            Galleries = new List<Gallery>();
         }
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -25,6 +26,7 @@ namespace BilBasarEgitim.Models.Entities
         public List<Notice> Notices { get; set; }
         public List<News> News { get; set; }
         public List<AcademicStaff> AcademicStaffs { get; set; }
+        public List<Gallery> Galleries { get; set; }
         
     }
 }

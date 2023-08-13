@@ -35,13 +35,6 @@ namespace BilBasarEgitim.Controllers
             return result;
         }
 
-        //[HttpGet]
-        //public ActionResult NonRelease(Guid Id)
-        //{
-        //    sliderService.UpdateRelease(Id,false);
-        //    return RedirectToActionPermanent("Index");
-        //}
-
         [HttpGet]
         public ActionResult UpdateRelease(Guid Id,bool check)
         {

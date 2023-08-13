@@ -538,6 +538,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminDocumentController.cs" />
     <Compile Include="Controllers\AdminEducationApplyController.cs" />
+    <Compile Include="Controllers\AdminGalleryController.cs" />
     <Compile Include="Controllers\AdminJobApplyController.cs" />
     <Compile Include="Controllers\AdminNewsController.cs" />
     <Compile Include="Controllers\AdminNoticeController.cs" />
@@ -570,6 +571,15 @@
     <Compile Include="Models\Dtos\EducationalApplyAddDto.cs" />
     <Compile Include="Models\Dtos\EducationalApplyDetailDto.cs" />
     <Compile Include="Models\Dtos\EducationalApplyPreviewDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryAddDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryForAdminDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryForUserDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryPlacementDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryPlacementUpdateDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryPlacementWithUiDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryUpdateDto.cs" />
+    <Compile Include="Models\Dtos\Gallery\GalleryUi.cs" />
+    <Compile Include="Models\Dtos\Gallery\ListGalleryPlacementUpdateDto.cs" />
     <Compile Include="Models\Dtos\HomeCombineDto.cs" />
     <Compile Include="Models\Dtos\JobApplyDetailDto.cs" />
     <Compile Include="Models\Dtos\JobApplyPreviewDto.cs" />
@@ -592,6 +602,7 @@
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Document.cs" />
     <Compile Include="Models\Entities\EducationalApply.cs" />
+    <Compile Include="Models\Entities\Gallery.cs" />
     <Compile Include="Models\Entities\JobApply.cs" />
     <Compile Include="Models\Entities\News.cs" />
     <Compile Include="Models\Entities\Notice.cs" />
@@ -602,6 +613,7 @@
     <Compile Include="Repositories\AdminRepository\AdminRepository.cs" />
     <Compile Include="Repositories\DocumentRepository.cs" />
     <Compile Include="Repositories\EducationalApplyRepository\EducationalApplyRepository.cs" />
+    <Compile Include="Repositories\GalleryRepository.cs" />
     <Compile Include="Repositories\JobApplylRepository\JobApplyRepository.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
     <Compile Include="Repositories\NoticeRepository.cs" />
@@ -611,6 +623,7 @@
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\DocumentService.cs" />
     <Compile Include="Services\EducationalApplyService.cs" />
+    <Compile Include="Services\GalleryService.cs" />
     <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\JobApplyService.cs" />
     <Compile Include="Services\NewsService.cs" />
@@ -758,6 +771,9 @@
     <Content Include="Views\AdminAcademicStaff\Index.cshtml" />
     <Content Include="Views\AdminAcademicStaff\Update.cshtml" />
     <Content Include="Views\Shared\PartialViews\_AcademicStaffPartialView.cshtml" />
+    <Content Include="Views\AdminGallery\Index.cshtml" />
+    <Content Include="Views\AdminGallery\Upload.cshtml" />
+    <Content Include="Views\AdminGallery\Placement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -771,6 +787,7 @@
     <Folder Include="Upload\Cvs\" />
     <Folder Include="Upload\Documents\" />
     <Folder Include="Upload\Images\AcademicStaff\" />
+    <Folder Include="Upload\Images\Gallery\" />
     <Folder Include="Upload\Images\News\" />
     <Folder Include="Upload\Images\Notice\" />
     <Folder Include="Upload\Images\Slider\" />
