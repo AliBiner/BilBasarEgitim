@@ -72,7 +72,7 @@ namespace BilBasarEgitim.Repositories
                         slider.ImageUrl = reader.GetString("ImageUrl");
                         slider.CreateDate = reader.GetDateTime("CreateDate");
                         slider.UpdateDate = reader.GetDateTime("UpdateDate");
-                        slider.Check = reader.GetBoolean("Check");
+                        slider.Check = reader.GetBoolean("sliderCheck");
                         slider.AdminId = reader.GetGuid("AdminId");
                     }
                 }
@@ -84,7 +84,7 @@ namespace BilBasarEgitim.Repositories
         public List<Slider> GetAllNotDelete()
         {
             _connection.Open();
-            string query = "select * from sliders where deleteDate is null";
+            string query = "select * from sliders where deleteDate is null order by createDate desc";
             List<Slider> sliders = new List<Slider>();
             using (MySqlCommand command = new MySqlCommand(query,_connection))
             {
@@ -111,10 +111,10 @@ namespace BilBasarEgitim.Repositories
         }
 
 
-        public List<Slider> GetAllOnlyUrl()
+        public List<Slider> GetAllForUser()
         {
             _connection.Open();
-            string query = "select imageUrl from sliders where deleteDate is null and sliderCheck = true";
+            string query = "select imageUrl from sliders where deleteDate is null and sliderCheck = true order by createDate desc";
             List<Slider> sliders = new List<Slider>();
             using (MySqlCommand command = new MySqlCommand(query,_connection))
             {

@@ -38,24 +38,53 @@ namespace BilBasarEgitim.Repositories.AdminRepository
             con.Close();
         }
 
-        public bool GetAll(string email)
+        public bool GetAll()
         {
             con.Open();
             string query = "select * from admins";
-            string id = null;
+            List<string> ids = new List<string>();
             using (MySqlCommand command = new MySqlCommand(query,con))
             {
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        id = reader.GetString("Email");
+                        ids.Add(reader.GetString("Email"));
                     }
                 }
             }
 
-            if (id==null)
+            if (ids.Count<2)
+            {
+                con.Close();
+                return false;
+            }
+            else
+            {
+                con.Close();
+                return true;
+            }
+        }
+
+        public bool RegisterControl(string email)
+        {
+            con.Open();
+            string controlQuery = "select email from admins where email =@email";
+            string emailCheck = null;
+            using (MySqlCommand command = new MySqlCommand(controlQuery, con))
+            {
+                command.Parameters.AddWithValue("email", email);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        emailCheck = reader.GetString("email");
+                    }
+                }
+            }
+
+            if (emailCheck == null)
             {
                 con.Close();
                 return false;

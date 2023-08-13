@@ -17,13 +17,18 @@ namespace BilBasarEgitim.Services
         {
             try
             {
-                var control = _adminRepository.GetAll(dto.Email);
+                var control = _adminRepository.GetAll();
                 if (control == true)
                 {
                     return "Zaten Sisteme Kayıtlı Bir Admin Bulunmaktadır.";
                 }
                 else
                 {
+                    var registerControl = _adminRepository.RegisterControl(dto.Email);
+                    if (registerControl == true)
+                    {
+                        return "Bu Email Adresi Zaten Kullanılmaktadır.";
+                    }
                     var model = CustomMapper.AdminRegisterDtoto(dto);
                     _adminRepository.Add(model);
                     return "İşlem Başarılı";

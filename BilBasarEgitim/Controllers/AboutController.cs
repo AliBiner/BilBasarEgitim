@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BilBasarEgitim.Services;
 
 namespace BilBasarEgitim.Controllers
 {
@@ -16,7 +17,9 @@ namespace BilBasarEgitim.Controllers
 
         public ActionResult AcademicStaff()
         {
-            return View();
+            AcademicStaffService academic = new AcademicStaffService();
+            var model = academic.GetAllForUser();
+            return View(model);
         }
         public ActionResult Branches()
         {

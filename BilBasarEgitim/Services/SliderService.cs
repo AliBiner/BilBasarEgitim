@@ -64,14 +64,16 @@ namespace BilBasarEgitim.Services
 
         public void Delete(Guid id)
         {
+            var sliderUrl = sliderRepository.GetById(id).ImageUrl;
             sliderRepository.Delete(id);
+            CustomMethod.SliderDelete(sliderUrl);
         }
 
         public List<SliderForUserDto> GetAllOnlyUrl()
         {
             try
             {
-                var modellist = sliderRepository.GetAllOnlyUrl();
+                var modellist = sliderRepository.GetAllForUser();
                 var dtolist = CustomMapper.ToSliderForUserDto(modellist);
                 return dtolist;
             }

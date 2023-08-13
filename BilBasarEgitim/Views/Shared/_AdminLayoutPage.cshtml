@@ -155,6 +155,24 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/duyurular">
+                    @*<i class="bi bi-envelope"></i>*@
+                    <span>Duyurular</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/haberler">
+                    @*<i class="bi bi-envelope"></i>*@
+                    <span>Haberler</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/admin/akademik-kadro">
+                    @*<i class="bi bi-envelope"></i>*@
+                    <span>Akademik Kadro</span>
+                </a>
+            </li>
         </ul>
 
     </aside><!-- End Sidebar-->
@@ -191,9 +209,9 @@
     <script>
         $(document).ready(function () {
             $("#fileInput").change(function () {
-                var   file = this.files[0];
+                var file = this.files[0];
                 if (file) {
-                    var  reader = new FileReader();
+                    var reader = new FileReader();
 
                     reader.onload = function (e) {
                         $("#imagePreview").attr("src", e.target.result).show();
@@ -204,6 +222,7 @@
             });
         });
     </script>
-    <script src="~/assets/js/sliderupload.js"></script>
+
+    <script src="~/assets/js/upload.js"></script>
 </body>
 </html>

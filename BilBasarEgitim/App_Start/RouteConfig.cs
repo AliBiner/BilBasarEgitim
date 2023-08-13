@@ -12,6 +12,80 @@ namespace BilBasarEgitim
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "AdminAkademikKadroSilRoute",
+                url: "admin/akademik-kadro/sil/{id}",
+                defaults: new { controller = "AdminAcademicStaff", action = "Delete", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminAkademikKadroGuncelleRoute",
+                url: "admin/akademik-kadro/guncelle/{id}",
+                defaults: new { controller = "AdminAcademicStaff", action = "Update", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminAkademikKadroRoute",
+                url: "admin/akademik-kadro",
+                defaults: new { controller = "AdminAcademicStaff", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminAkademikKadroYukleRoute",
+                url: "admin/akademik-kadro/yukle/{id}",
+                defaults: new { controller = "AdminAcademicStaff", action = "Upload", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminHaberlerSilRoute",
+                url: "admin/haberler/sil/{id}",
+                defaults: new { controller = "AdminNews", action = "Delete", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminHaberlerGuncelleRoute",
+                url: "admin/haberler/guncelle/{id}",
+                defaults: new { controller = "AdminNews", action = "Update", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminHaberlerYukleRoute",
+                url: "admin/haberler/yukle/{id}",
+                defaults: new { controller = "AdminNews", action = "Upload", id = UrlParameter.Optional }
+            );
+
+
+            routes.MapRoute(
+                name: "AdminHaberlerRoute",
+                url: "admin/haberler",
+                defaults: new { controller = "AdminNews", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminDuyurularSilRoute",
+                url: "admin/duyurular/sil/{id}",
+                defaults: new { controller = "AdminNotice", action = "Delete", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminDuyurularGuncelleRoute",
+                url: "admin/duyurular/guncelle/{id}",
+                defaults: new { controller = "AdminNotice", action = "Update", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminDuyurularYukleRoute",
+                url: "admin/duyurular/yukle/{id}",
+                defaults: new { controller = "AdminNotice", action = "Upload", id = UrlParameter.Optional }
+            );
+
+
+            routes.MapRoute(
+                name: "AdminDuyurularRoute",
+                url: "admin/duyurular",
+                defaults: new { controller = "AdminNotice", action = "Index", id = UrlParameter.Optional }
+            );
+
+
             routes.MapRoute(
                 name: "AdminSliderSilRoute",
                 url: "admin/slider/sil/{id}",
@@ -176,7 +250,7 @@ namespace BilBasarEgitim
                 url: "haberler",
                 defaults: new { controller = "Information", action = "News", id = UrlParameter.Optional }
             );
-
+           
             routes.MapRoute(
                 name: "DuyurularRoute",
                 url: "duyurular",

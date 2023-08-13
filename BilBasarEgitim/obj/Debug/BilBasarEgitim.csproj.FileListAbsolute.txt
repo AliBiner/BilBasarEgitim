@@ -100,4 +100,3 @@ C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgit
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.csproj.CopyComplete
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.dll
 C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.pdb
-C:\Users\ali_b\source\repos\TmkMuhendislik\BilBasarEgitim\obj\Debug\BilBasarEgitim.csproj.AssemblyReference.cache

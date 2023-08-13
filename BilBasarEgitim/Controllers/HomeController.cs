@@ -13,9 +13,10 @@ namespace BilBasarEgitim.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            SliderService sliderService = new SliderService();
-            var model = sliderService.GetAllOnlyUrl();
+            HomeService homeService = new HomeService();
+            var model = homeService.HomeDatas();
             return View(model);
         }
+
     }
 }
