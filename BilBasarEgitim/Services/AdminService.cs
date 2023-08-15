@@ -37,7 +37,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                return "İşlem Hatası: " + " " + e.Message;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
            
         }
@@ -60,7 +61,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                return "İşlem Hatası: " + " " + e.Message;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
            
         }
@@ -90,8 +92,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return "İşlem Hatası: " + e.Message;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
            
         }
@@ -109,7 +111,7 @@ namespace BilBasarEgitim.Services
                 {
                     var admin = CustomMapper.AdminChangePasswordDtoTo(dto);
                     _adminRepository.UpdatePassword(admin);
-                    return "";
+                    return "İşlem Başarılı";
                 }
             }
             catch (Exception e)

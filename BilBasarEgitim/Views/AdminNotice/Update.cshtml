@@ -32,7 +32,7 @@
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Resim Değiştir</label>
                                 <div class="col-sm-10">
                                     <input type="file" id="fileInput" name="file" accept="image/*">
-
+                                    <span class="error-message" id="fileInput-error"></span>
                                 </div>
                             </div>
 
@@ -43,14 +43,15 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Başlık</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="header" value="@Model.Header">
-
+                                    <input type="text" name="header" id="head" value="@Model.Header">
+                                    <span class="error-message" id="head-error"></span>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Açıklama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="description" style="width: 100%;" value="@Model.Description">
+                                    <input type="text" name="description" id="description" style="width: 100%;" value="@Model.Description">
+                                    <span class="error-message" id="description-error"></span>
 
                                 </div>
                             </div>

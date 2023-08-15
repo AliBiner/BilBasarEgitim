@@ -6,6 +6,7 @@ using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Models.Dtos.AcademicStaff;
 using BilBasarEgitim.Models.Dtos.Gallery;
 using BilBasarEgitim.Models.Dtos.News;
+using BilBasarEgitim.Models.Dtos.TrainingPublication;
 using BilBasarEgitim.Models.Entities;
 using BilBasarEgitim.Models.News;
 
@@ -521,9 +522,9 @@ namespace BilBasarEgitim.Mappers
                 Name = dto.Name,
                 SurName = dto.SurName,
                 EducatorField = dto.EducatorField,
-                FaceBookUrl = dto.FaceBookUrl,
-                TwitterUrl = dto.TwitterUrl,
-                InstagramUrl = dto.InstagramUrl,
+                FaceBookUrl = dto.FaceBookUrl == null ? "Boş" : dto.FaceBookUrl,
+                TwitterUrl = dto.TwitterUrl == null ? "Boş" : dto.TwitterUrl,
+                InstagramUrl = dto.InstagramUrl == null ? "Boş" : dto.InstagramUrl,
 
             };
         }
@@ -637,6 +638,112 @@ namespace BilBasarEgitim.Mappers
             }
 
             return galleries;
+        }
+
+        public static List<Gallery> GalleryPlacementUpdateDtoto(GalleryPlacementUpdateDto dtos)
+        {
+            List<Gallery> galleries = new List<Gallery>();
+            for (int i = 0; i < dtos.GalleryId.Count; i++)
+            {
+               var gallery = new Gallery();
+               gallery.Id = dtos.GalleryId[i];
+               gallery.Placement = dtos.PlacementUpdate[i];
+               galleries.Add(gallery);
+
+            }
+
+            return galleries;
+        }
+
+        //Training Publication
+        public static TrainingPublication TrainingPublicationAddDtoTo(TrainingPublicationAddDto dto)
+        {
+            return new TrainingPublication()
+            {
+                AdminId = dto.AdminId,
+                Check = dto.Check,
+                Description = dto.Description
+            };
+        }
+        public static List<TrainingPublicationForAdminDto> ToTrainingPublicationsDto(List<TrainingPublication> entity)
+        {
+            List<TrainingPublicationForAdminDto> trainingPublications = new List<TrainingPublicationForAdminDto>();
+            foreach (var i in entity)
+            {
+                var training = new TrainingPublicationForAdminDto();
+                if (i.Check == true)
+                {
+
+                    training.Id = i.Id;
+                    training.CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm");
+                    training.ImageUrl = i.ImageUrl;
+                    training.Description = i.Description;
+                    training.Check = "Yayında";
+
+                }
+                else
+                {
+                    training.Id = i.Id;
+                    training.CreateDate = i.CreateDate.ToString("dd/MM/yyyy HH:mm");
+                    training.ImageUrl = i.ImageUrl;
+                    training.Description = i.Description;
+                    training.Check = "Yayında Değil";
+
+                }
+                trainingPublications.Add(training);
+            }
+
+            return trainingPublications;
+        }
+        public static List<TrainingPublicationForUserDto> ToTrainingPublicationsForUserDto(List<TrainingPublication> entity)
+        {
+            List<TrainingPublicationForUserDto> trainingPublications = new List<TrainingPublicationForUserDto>();
+            foreach (var VARIABLE in entity)
+            {
+                var training = new TrainingPublicationForUserDto()
+                {
+                    ImageUrl = VARIABLE.ImageUrl,
+                    Description = VARIABLE.Description
+                };
+                trainingPublications.Add(training);
+            }
+
+            return trainingPublications;
+
+        }
+
+        public static List<TrainingPublicationPlacementDto> ToTrainingPublicationPlacementDtos(List<TrainingPublication> entity)
+        {
+            List<TrainingPublicationPlacementDto> trainingPublications = new List<TrainingPublicationPlacementDto>();
+            foreach (var item in entity)
+            {
+                TrainingPublicationPlacementDto trainingPublication = new TrainingPublicationPlacementDto()
+                {
+                    Id = item.Id,
+                    ImageUrl = item.ImageUrl,
+                    Description = item.Description,
+                    Placement = item.Placement,
+                    Check = item.Check
+                };
+                trainingPublications.Add(trainingPublication);
+            }
+
+            return trainingPublications;
+        }
+
+        public static List<TrainingPublication> TrainingPublicationPlacementUpdateDtoto(TrainingPublicationPlacementUpdateDto dtos)
+        {
+            List<TrainingPublication> trainingPublications = new List<TrainingPublication>();
+            for (int i = 0; i < dtos.TraningPublicationId.Count; i++)
+            {
+                var training = new TrainingPublication();
+                training.Id = dtos.TraningPublicationId[i];
+                training.Placement = dtos.PlacementUpdate[i];
+                trainingPublications.Add(training);
+
+            }
+
+            return trainingPublications;
         }
     }
 }

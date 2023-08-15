@@ -28,11 +28,12 @@ namespace BilBasarEgitim.Controllers
         }
 
         [HttpPost]
-        public string Upload(AcademicStaffAddDto dto)
+        public ActionResult Upload(AcademicStaffAddDto dto)
         {
+            
             var result = academic.Add(dto);
             Response.Cache.SetNoStore();
-            return result;
+            return Content(result);
         }
 
         public ActionResult Update(Guid id)

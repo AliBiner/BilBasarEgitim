@@ -22,7 +22,7 @@ namespace BilBasarEgitim.Services
                 var sliderUrl = CustomMethod.SliderImageUpload(dto.ImageUrl);
                 if (sliderUrl == null)
                 {
-                    return "Resim Seçili Değil.";
+                    return "Lütfen Resim Seçiniz.";
                 }
                 model.ImageUrl = sliderUrl;
                 sliderRepository.Add(model);
@@ -30,8 +30,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return "İşlem Hatası: " + " Kayıt İşlemi Başarısız." ;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
             
         }

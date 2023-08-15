@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BilBasarEgitim.App_Start;
+using BilBasarEgitim.Models.Dtos;
 using BilBasarEgitim.Services;
 
 namespace BilBasarEgitim.Controllers
@@ -20,11 +21,11 @@ namespace BilBasarEgitim.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Index(Guid id , string Email)
+        public ActionResult Index(SendEmailUpdateDto dto)
         {
-            _emailService.UpdateByEmail(id, Email);
+            var result = _emailService.UpdateByEmail(dto.Id, dto.Email);
             Response.Cache.SetNoStore();
-            return RedirectToActionPermanent("Index");
+            return Content(result);
         }
     }
 }

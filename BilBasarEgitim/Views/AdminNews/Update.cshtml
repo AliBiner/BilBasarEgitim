@@ -20,7 +20,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Haber Yükleme</h5>
+                        <h5 class="card-title">Haber Düzenleme</h5>
                         <div class="row mb-3">
                             <label class="col-sm-2">Mevcut Resim</label>
                             <img class="col-sm-10" src="~/Upload/Images/News/@Model.NewsUrl" style="max-width: 700px; max-height: 700px;">
@@ -32,7 +32,7 @@
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Resim Değiştir</label>
                                 <div class="col-sm-10">
                                     <input type="file" id="fileInput" name="file" accept="image/*">
-
+                                    <span class="error-message" id="fileInput-error"></span>
                                 </div>
                             </div>
 
@@ -43,8 +43,8 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Açıklama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="description" style="width: 100%;" value="@Model.Description">
-
+                                    <input type="text" name="description" id="description" style="width: 100%;" value="@Model.Description">
+                                    <span class="error-message" id="description-error"></span>
                                 </div>
                             </div>
                             <input type="hidden" name="Id" value="@Model.Id" />

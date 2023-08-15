@@ -25,7 +25,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                return "İşlem Hatası: " + " " + e.Message;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası"; 
             }
             
         }

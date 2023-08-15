@@ -19,9 +19,9 @@ namespace BilBasarEgitim.Services
             try
             {
                 var url = CustomMethod.AcademicStaffImageUpload(dto.File);
-                if (url==null)
+                if (url == null)
                 {
-                    return "Resim Seçiniz";
+                    return "Lütfen Resim Seçiniz.";
                 }
                 var model = CustomMapper.AcademicStaffAddDtoTo(dto);
                 model.ImageUrl = url;
@@ -30,7 +30,7 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(e.Message);
                 return "İşlem Hatası";
             }
             
@@ -60,7 +60,7 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(e.Message);
                 return "İşlem Hatası";
             }
             

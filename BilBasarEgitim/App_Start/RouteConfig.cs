@@ -12,6 +12,34 @@ namespace BilBasarEgitim
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "AdminYayinDuzenleRoute",
+                url: "admin/yayinlar/duzenle",
+                defaults: new { controller = "AdminTrainingPublication", action = "Placement", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminYayinSilRoute",
+                url: "admin/yayinlar/sil/{id}",
+                defaults: new { controller = "AdminTrainingPublication", action = "Delete", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminYayinYayinlaRoute",
+                url: "admin/yayinlar/yayin-durumu/{id}",
+                defaults: new { controller = "AdminTrainingPublication", action = "UpdateRelease", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "AdminYayinRoute",
+                url: "admin/yayinlar",
+                defaults: new { controller = "AdminTrainingPublication", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "AdminYayinYukleRoute",
+                url: "admin/yayinlar/yukle/{id}",
+                defaults: new { controller = "AdminTrainingPublication", action = "Upload", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "AdminGaleriDuzenleRoute",
                 url: "admin/galeri/duzenle",
@@ -194,6 +222,10 @@ namespace BilBasarEgitim
                 name: "EgitimBasvuruSilRoute",
                 url: "admin/egitim-basvuru/sil/{id}",
                 defaults: new { controller = "AdminEducationApply", action = "Delete", id = UrlParameter.Optional }
+            ); routes.MapRoute(
+                name: "EgitimBasvuruOnaylananSilRoute",
+                url: "admin/egitim-basvuru/-onaylanan-sil/{id}",
+                defaults: new { controller = "AdminEducationApply", action = "DeleteApproval", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "EgitimBasvuruDetayRoute",
@@ -226,6 +258,11 @@ namespace BilBasarEgitim
                 name: "ReddetRoute",
                 url: "admin/is-basvuru/reddet/{id}",
                 defaults: new { controller = "AdminJobApply", action = "Delete", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "OnaylananReddetRoute",
+                url: "admin/is-basvuru/onaylanan-reddet/{id}",
+                defaults: new { controller = "AdminJobApply", action = "DeleteApproval", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "IsBasvuruRoute",

@@ -37,6 +37,14 @@ namespace BilBasarEgitim.Controllers
 
         }
         [HttpGet]
+        public ActionResult DeleteApproval(Guid id)
+        {
+            _applyService.DeleteById(id);
+            Response.Cache.SetNoStore();
+            return RedirectToAction("GetAllApproval");
+
+        }
+        [HttpGet]
         public ActionResult Approval(Guid id)
         {
             _applyService.UpdateById(id);

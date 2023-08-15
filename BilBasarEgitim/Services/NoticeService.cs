@@ -29,8 +29,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return "İşlem Hatası: " + " Kayıt İşlemi Başarısız.";
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
 
         }
@@ -70,7 +70,7 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(e.Message);
                 return "İşlem Hatası";
             }
             

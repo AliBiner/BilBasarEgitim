@@ -146,7 +146,7 @@ namespace BilBasarEgitim.Repositories
         public List<Gallery> GetAllForUser()
         {
             _connection.Open();
-            string query = "select imageUrl from galleries where deleteDate is null and galleryCheck = true order by placement asc,createDate desc";
+            string query = "select imageUrl,description from galleries where deleteDate is null and galleryCheck = true order by placement asc,createDate desc";
             List<Gallery> galleries = new List<Gallery>();
             using (MySqlCommand command = new MySqlCommand(query, _connection))
             {
@@ -156,7 +156,8 @@ namespace BilBasarEgitim.Repositories
                     {
                         Gallery gallery = new Gallery()
                         {
-                            ImageUrl = reader.GetString("imageUrl")
+                            ImageUrl = reader.GetString("imageUrl"),
+                            Description = reader.GetString("description")
                         };
                         galleries.Add(gallery);
                     }
@@ -166,17 +167,17 @@ namespace BilBasarEgitim.Repositories
             return galleries;
         }
 
-        public void GalleryPlacementUpdate(GalleryPlacementUpdateDto dto)
+        public void GalleryPlacementUpdate(List<Gallery> dto)
         {
             _connection.Open();
             string query = "update galleries set placement=@placement where id=@id";
-            for (int i = 0; i < dto.GalleryId.Count; i++)
+            for (int i = 0; i < dto.Count; i++)
             {
                 using (MySqlCommand command = new MySqlCommand(query,_connection))
                 {
                    
-                    command.Parameters.AddWithValue("id", dto.GalleryId[i]);
-                    command.Parameters.AddWithValue("placement", dto.PlacementUpdate[i]);
+                    command.Parameters.AddWithValue("id", dto[i].Id);
+                    command.Parameters.AddWithValue("placement", dto[i].Placement);
                     command.ExecuteNonQuery();
                 }
             }

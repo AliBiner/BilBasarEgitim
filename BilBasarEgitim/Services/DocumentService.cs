@@ -18,6 +18,10 @@ namespace BilBasarEgitim.Services
             try
             {
                 var documentUrl = CustomMethod.DocumentUpload(document);
+                if (documentUrl == null)
+                {
+                    return "Lütfen Resim Seçiniz.";
+                }
                 var model = CustomMapper.DocumentAddDtoTo(dto);
                 model.DocumentUrl = documentUrl;
                 _documentRepository.Add(model);
@@ -25,7 +29,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                return "İşlem Hatası: " + e.Message;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
         }
 

@@ -1,10 +1,10 @@
-﻿
+﻿@model List<BilBasarEgitim.Models.Dtos.TrainingPublication.TrainingPublicationForUserDto>
 @{
     ViewBag.Title = "Yayınlar";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<section data-bs-version="5.1" class="gallery6 mbr-gallery cid-tHllw1ZekP" id="gallery6-1p">
+<section data-bs-version="5.1" class="gallery6 mbr-gallery cid-tHljzNFA9D" id="gallery6-1o">
 
 
 
@@ -16,364 +16,67 @@
 
         </div>
         <div class="row mbr-gallery mt-4">
-
-            <div class="col-12 col-md-6 col-lg-3 item gallery-image active">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/biyoloji-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+            @{
+                int i = 0;
+            }
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-3 item gallery-image @(i==0 ? "active":"")">
+                    <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTfzrcE-modal" data-bs-target="#tL2YTfzrcE-modal">
+                        <img class="w-100" src="~/Upload/Images/Publication/@item.ImageUrl" data-slide-to="@i" data-bs-slide-to="@i" data-target="#lb-tL2YTfzrcE" data-bs-target="#lb-tL2YTfzrcE">
+                        <div class="icon-wrapper">
+                            <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        </div>
                     </div>
+                    <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">@item.Description</h6>
                 </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Biyoloji 10. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/biyoloji-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Biyoloji 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/biyoloji-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Biyoloji TYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/corafya-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="3" data-bs-slide-to="3" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Coğrafya TYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/corafya-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="4" data-bs-slide-to="4" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Coğrafya 10. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/corafya-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="5" data-bs-slide-to="5" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Coğrafya 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/corafya-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="6" data-bs-slide-to="6" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Coğrafya AYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/corafya-modler-soru-bankas-9-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="7" data-bs-slide-to="7" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Coğrafya 9. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/edebiyat-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="8" data-bs-slide-to="8" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Edebiyat AYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/felsefe-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="9" data-bs-slide-to="9" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Felsefe 10. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/felsefe-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="10" data-bs-slide-to="10" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Felsefe 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/felsefe-grubu-ayt-modler-soru-bankas-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="11" data-bs-slide-to="11" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Felsefe AYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/felsefe-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="12" data-bs-slide-to="12" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Felsefe TYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/fizik-modler-soru-bankas-10-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="13" data-bs-slide-to="13" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Fizik 10. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/fizik-modler-soru-bankas-ayt-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="14" data-bs-slide-to="14" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Fizik AYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/geometri-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="15" data-bs-slide-to="15" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Geometri TYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/kimya-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="16" data-bs-slide-to="16" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Kimya 9. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/kimya-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="17" data-bs-slide-to="17" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Kimya 10. Kimya Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/kimya-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="18" data-bs-slide-to="18" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Kimya 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/kimya-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="19" data-bs-slide-to="19" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Kimya AYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/kimya-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="20" data-bs-slide-to="20" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Kimya TYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/matemati-9-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="21" data-bs-slide-to="21" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Matematik 9. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/matematik-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="22" data-bs-slide-to="22" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Matematik 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/tarih-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="23" data-bs-slide-to="23" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Tarih 10. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/tarih-modler-soru-bankas-11-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="24" data-bs-slide-to="24" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Tarih 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/tarih-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="25" data-bs-slide-to="25" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Tarih TYT Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/trk-dili-ve-edebiyat-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="26" data-bs-slide-to="26" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Türk Dili ve Edebiyatı 9. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/trk-dili-ve-edebiyat-10-sinif-eitim-vadisi-soru-bankas-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="27" data-bs-slide-to="27" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Türk Dili ve Edebiyatı 10. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/trk-dili-ve-edebiyat-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="28" data-bs-slide-to="28" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Türk Dili ve Edebiyatı 11. Sınıf Soru Bankası</h6>
-            </div><div class="col-12 col-md-6 col-lg-3 item gallery-image">
-                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTjhPjg-modal" data-bs-target="#tL2YTjhPjg-modal">
-                    <img class="w-100" src="~/assets/images/trke-tyt-modler-soru-bankas-eitim-vafisi-800x600.jpg" alt="Mobirise Website Builder" data-slide-to="29" data-bs-slide-to="29" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg">
-                    <div class="icon-wrapper">
-                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
-                    </div>
-                </div>
-                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">Türkçe TYT Soru Bankası</h6>
-            </div>
+                i++;
+            }
 
 
         </div>
 
-        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="tL2YTjhPjg-modal">
+        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="tL2YTfzrcE-modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <div class="carousel slide" id="lb-tL2YTjhPjg" data-ride="carousel" data-bs-ride="carousel" data-interval="4000" data-bs-interval="4000">
+                        <div class="carousel slide" id="lb-tL2YTfzrcE" data-ride="carousel" data-bs-ride="carousel" data-interval="4000" data-bs-interval="4000">
                             <div class="carousel-inner">
-
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="~/assets/images/biyoloji-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/biyoloji-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/biyoloji-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/corafya-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/corafya-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/corafya-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/corafya-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/corafya-modler-soru-bankas-9-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/edebiyat-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/felsefe-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/felsefe-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/felsefe-grubu-ayt-modler-soru-bankas-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/felsefe-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/fizik-modler-soru-bankas-10-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/fizik-modler-soru-bankas-ayt-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/geometri-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/kimya-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/kimya-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/kimya-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/kimya-ayt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/kimya-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/matemati-9-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/matematik-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/tarih-10-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/tarih-modler-soru-bankas-11-snf-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/tarih-tyt-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/trk-dili-ve-edebiyat-9-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/trk-dili-ve-edebiyat-10-sinif-eitim-vadisi-soru-bankas-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/trk-dili-ve-edebiyat-11-snf-modler-soru-bankas-eitim-vadisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div><div class="carousel-item">
-                                    <img class="d-block w-100" src="~/assets/images/trke-tyt-modler-soru-bankas-eitim-vafisi-800x600.jpg" alt="Mobirise Website Builder">
-                                </div>
+                                @{
+                                    int j = 0;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <div class="carousel-item @(j==0 ? "active":"")">
+                                        <img class="d-block w-100" src="~/Upload/Images/Publication/@item.ImageUrl">
+                                    </div>
+                                    j++;
+                                }
 
 
                             </div>
                             <ol class="carousel-indicators">
-                                <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="1" data-bs-slide-to="1" class="" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="2" data-bs-slide-to="2" class="" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="3" data-bs-slide-to="3" class="" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="4" data-bs-slide-to="4" class="" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="5" data-bs-slide-to="5" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="6" data-bs-slide-to="6" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="7" data-bs-slide-to="7" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="8" data-bs-slide-to="8" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="9" data-bs-slide-to="9" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="10" data-bs-slide-to="10" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="11" data-bs-slide-to="11" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="12" data-bs-slide-to="12" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="13" data-bs-slide-to="13" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="14" data-bs-slide-to="14" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="15" data-bs-slide-to="15" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="16" data-bs-slide-to="16" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="17" data-bs-slide-to="17" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="18" data-bs-slide-to="18" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="19" data-bs-slide-to="19" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="20" data-bs-slide-to="20" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="21" data-bs-slide-to="21" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="22" data-bs-slide-to="22" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="23" data-bs-slide-to="23" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="24" data-bs-slide-to="24" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="25" data-bs-slide-to="25" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="26" data-bs-slide-to="26" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="27" data-bs-slide-to="27" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="28" data-bs-slide-to="28" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
-                                <li data-slide-to="29" data-bs-slide-to="29" data-target="#lb-tL2YTjhPjg" data-bs-target="#lb-tL2YTjhPjg"></li>
+                                @{
+                                    int k = 0;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <li data-slide-to="@k" data-bs-slide-to="@k" class="@(k == 0 ? "active" : "")" data-target="#lb-tL2YTfzrcE" data-bs-target="#lb-tL2YTfzrcE">
+
+                                    </li>
+                                    k++;
+                                }
+
 
 
                             </ol>
                             <a role="button" href="" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
                             </a>
-                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-tL2YTjhPjg">
+                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-tL2YTfzrcE">
                                 <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
                                 <span class="sr-only visually-hidden">Previous</span>
                             </a>
-                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-tL2YTjhPjg">
+                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-tL2YTfzrcE">
                                 <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
                                 <span class="sr-only visually-hidden">Next</span>
                             </a>

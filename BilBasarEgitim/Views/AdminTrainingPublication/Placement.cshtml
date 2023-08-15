@@ -1,0 +1,81 @@
+﻿@model BilBasarEgitim.Models.Dtos.TrainingPublication.TrainingPublicationPlacementWithUiDto
+@{
+    ViewBag.Title = "Placement";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<main class="main" id="main">
+
+    @using (Html.BeginForm("Placement", "AdminTrainingPublication", FormMethod.Post))
+    {
+        <input type="submit" value="Sıralamayı Güncelle" class="btn btn-primary"/>
+        <section class="section">
+            @{
+                int m = 0;
+            }
+            @for (int i = 0; i < Model.TariningPublicationUi.LineNumber; i++)
+            {
+
+                if (i == Model.TariningPublicationUi.LineNumber - 1)
+                {
+                    <div class="container row col-12 justify-content-center">
+                        @for (int j = 0; j < Model.TariningPublicationUi.DataNumInLastLine; j++)
+                        {
+                            <div class="card col-sm-2 me-5 " style="@(Model.TrainingPublicationPlacementDtos[m].Check==false ? "opacity:0.5;" : "")">
+                                <div class="card-body">
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="~/Upload/Images/Publication/@Model.TrainingPublicationPlacementDtos[m].ImageUrl" class="d-block w-100">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title">@Model.TrainingPublicationPlacementDtos[m].Description</h5>
+                                    <input type="number" name="PlacementUpdate" value="@Model.TrainingPublicationPlacementDtos[m].Placement" style="width: 100%" />
+                                    <input type="hidden" name="TraningPublicationId" value="@Model.TrainingPublicationPlacementDtos[m].Id" />
+                                </div>
+                            </div>
+                            m++;
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="container row col-12 justify-content-center">
+                        @for (int k = 0; k < 4; k++)
+                        {
+                            <div class="card col-sm-2 me-5 " style="opacity:  @(Model.TrainingPublicationPlacementDtos[m].Check==false ? "0.5" : "1")">
+                                <div class="card-body">
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="~/Upload/Images/Publication/@Model.TrainingPublicationPlacementDtos[m].ImageUrl" class="d-block w-100">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title">@Model.TrainingPublicationPlacementDtos[m].Description</h5>
+                                    <input type="number" name="PlacementUpdate" value="@Model.TrainingPublicationPlacementDtos[m].Placement" style="width: 100%" />
+                                    <input type="hidden" name="TraningPublicationId" value="@Model.TrainingPublicationPlacementDtos[m].Id" />
+                                </div>
+                            </div>
+                            m++;
+                        }
+                    </div>
+                }
+
+
+
+            }
+
+
+        </section>
+       
+    }
+
+
+
+
+</main>
+

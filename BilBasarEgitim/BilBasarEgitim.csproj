@@ -544,6 +544,7 @@
     <Compile Include="Controllers\AdminNoticeController.cs" />
     <Compile Include="Controllers\AdminSendEmailController.cs" />
     <Compile Include="Controllers\AdminSliderController.cs" />
+    <Compile Include="Controllers\AdminTrainingPublicationController.cs" />
     <Compile Include="Controllers\ApplyController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
@@ -579,7 +580,6 @@
     <Compile Include="Models\Dtos\Gallery\GalleryPlacementWithUiDto.cs" />
     <Compile Include="Models\Dtos\Gallery\GalleryUpdateDto.cs" />
     <Compile Include="Models\Dtos\Gallery\GalleryUi.cs" />
-    <Compile Include="Models\Dtos\Gallery\ListGalleryPlacementUpdateDto.cs" />
     <Compile Include="Models\Dtos\HomeCombineDto.cs" />
     <Compile Include="Models\Dtos\JobApplyDetailDto.cs" />
     <Compile Include="Models\Dtos\JobApplyPreviewDto.cs" />
@@ -593,10 +593,19 @@
     <Compile Include="Models\Dtos\NoticeForUserDto.cs" />
     <Compile Include="Models\Dtos\NoticeUpdateDto.cs" />
     <Compile Include="Models\Dtos\SendEmailDto.cs" />
+    <Compile Include="Models\Dtos\SendEmailUpdateDto.cs" />
     <Compile Include="Models\Dtos\SliderAddDto.cs" />
     <Compile Include="Models\Dtos\SliderForAdminDto.cs" />
     <Compile Include="Models\Dtos\SliderForUserDto.cs" />
     <Compile Include="Models\Dtos\SliderUpdateDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationAddDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationForAdminDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationForUserDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationPlacementDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationPlacementUpdateDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationPlacementWithUiDto.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationUi.cs" />
+    <Compile Include="Models\Dtos\TrainingPublication\TrainingPublicationUpdateDto.cs" />
     <Compile Include="Models\Entities\AcademicStaff.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
@@ -608,6 +617,7 @@
     <Compile Include="Models\Entities\Notice.cs" />
     <Compile Include="Models\Entities\SendEmail.cs" />
     <Compile Include="Models\Entities\Slider.cs" />
+    <Compile Include="Models\Entities\TrainingPublication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AcademicStaffRepository.cs" />
     <Compile Include="Repositories\AdminRepository\AdminRepository.cs" />
@@ -619,6 +629,7 @@
     <Compile Include="Repositories\NoticeRepository.cs" />
     <Compile Include="Repositories\SendEmailRepository.cs" />
     <Compile Include="Repositories\SliderRepository.cs" />
+    <Compile Include="Repositories\TrainingPublicationRepository.cs" />
     <Compile Include="Services\AcademicStaffService.cs" />
     <Compile Include="Services\AdminService.cs" />
     <Compile Include="Services\DocumentService.cs" />
@@ -630,6 +641,7 @@
     <Compile Include="Services\NoticeService.cs" />
     <Compile Include="Services\SendEmailService.cs" />
     <Compile Include="Services\SliderService.cs" />
+    <Compile Include="Services\TrainingPublicationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -774,6 +786,9 @@
     <Content Include="Views\AdminGallery\Index.cshtml" />
     <Content Include="Views\AdminGallery\Upload.cshtml" />
     <Content Include="Views\AdminGallery\Placement.cshtml" />
+    <Content Include="Views\AdminTrainingPublication\Index.cshtml" />
+    <Content Include="Views\AdminTrainingPublication\Upload.cshtml" />
+    <Content Include="Views\AdminTrainingPublication\Placement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -790,6 +805,7 @@
     <Folder Include="Upload\Images\Gallery\" />
     <Folder Include="Upload\Images\News\" />
     <Folder Include="Upload\Images\Notice\" />
+    <Folder Include="Upload\Images\Publication\" />
     <Folder Include="Upload\Images\Slider\" />
   </ItemGroup>
   <ItemGroup>

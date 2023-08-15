@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Web;
 
 namespace BilBasarEgitim.Models.Entities
@@ -15,6 +16,7 @@ namespace BilBasarEgitim.Models.Entities
             News = new List<News>();
             AcademicStaffs = new List<AcademicStaff>();
             Galleries = new List<Gallery>();
+            TrainingPublications = new List<TrainingPublication>();
         }
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -27,6 +29,7 @@ namespace BilBasarEgitim.Models.Entities
         public List<News> News { get; set; }
         public List<AcademicStaff> AcademicStaffs { get; set; }
         public List<Gallery> Galleries { get; set; }
+        public List<TrainingPublication> TrainingPublications { get; set; }
         
     }
 }

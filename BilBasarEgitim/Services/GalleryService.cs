@@ -31,8 +31,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                return "İşlem Hatası: " + " Kayıt İşlemi Başarısız.";
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
 
         }
@@ -103,8 +103,16 @@ namespace BilBasarEgitim.Services
             var lineDoubleNumber = dtos.Count / 4.0;
             var lineIntNumber = Convert.ToInt32(Math.Ceiling(lineDoubleNumber));
 
-            var datanumlastLine = dtos.Count % 4;
-
+            var datanum = dtos.Count % 4;
+            int datanumlastLine;
+            if (datanum == 0)
+            {
+                datanumlastLine = dtos.Count - (lineIntNumber -1) * 4;
+            }
+            else
+            {
+                datanumlastLine = datanum;
+            }
             var model = new GalleryUi()
             {
                 LineNumber = lineIntNumber,
@@ -115,7 +123,8 @@ namespace BilBasarEgitim.Services
 
         public void GalleryPlacementUpdate(GalleryPlacementUpdateDto dto)
         {
-            galleryRepository.GalleryPlacementUpdate(dto);
+            var models = CustomMapper.GalleryPlacementUpdateDtoto(dto);
+            galleryRepository.GalleryPlacementUpdate(models);
         }
     }
 }

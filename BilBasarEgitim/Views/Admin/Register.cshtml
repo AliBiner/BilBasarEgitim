@@ -54,7 +54,7 @@
                                             <h5 class="card-title text-center pb-0 fs-4">Kayıt Ol</h5>
 
                                         </div>
-                                        @using (Html.BeginForm("Register", "Admin", FormMethod.Post))
+                                        @using (Html.BeginForm("Register", "Admin", FormMethod.Post, new {id = "register-validation"}))
                                         {
                                             <div  class="row g-3 needs-validation">
 

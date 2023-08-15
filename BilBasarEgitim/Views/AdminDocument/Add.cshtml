@@ -3,7 +3,15 @@
     ViewBag.Title = "Döküman Yükle";
     Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 }
-
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 10px;">
+        <div class="modal-content">
+            <div class="modal-body" id="errorModalMessage" style="margin: 20px;">
+                <!-- Hata mesajı burada görüntülenecek -->
+            </div>
+        </div>
+    </div>
+</div>
 <main id="main" class="main">
 
     <section class="section">
@@ -15,20 +23,24 @@
                     <div class="card-body">
                         
                         <h5 class="card-title mt-4">Döküman Yükleme</h5>
-                        @using (Html.BeginForm("Add", "AdminDocument", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        @using (Html.BeginForm("Add", "AdminDocument", FormMethod.Post, new { id="document-upload", enctype = "multipart/form-data" }))
                         {
                             <div class="row g-3">
                                 <!-- Vertical Form -->
                                
                                     <div class="col-12 row mt-4">
                                         <label for="inputNanme4" class=" col-sm-2 form-label">Döküman Açıklaması</label>
-                                        <div class="col-sm-10"><input type="text" class="form-control" name="Description" id="inputNanme4"></div>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="Description" id="description">
+                                            <span class="error-message" id="description-error"></span>
+                                        </div>
                                         
                                     </div>
                                 <div class="row mt-4">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">Döküman Yükle</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" name="document" type="file" id="formFile" accept=".pdf,.doc,.docx" required>
+                                        <input class="form-control" name="document" type="file" id="fileInput" accept=".pdf,.doc,.docx" required>
+                                        <span class="error-message" id="fileInput-error"></span>
                                     </div>
                                 </div>
                                 <div>

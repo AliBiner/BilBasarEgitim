@@ -12,7 +12,9 @@ namespace BilBasarEgitim.Controllers
         // GET: Information
         public ActionResult News()
         {
-            return View();
+            NewsService newsService = new NewsService();
+            var model = newsService.GetAllOnlyUrl();
+            return View(model);
         }
         public ActionResult Notice()
         {

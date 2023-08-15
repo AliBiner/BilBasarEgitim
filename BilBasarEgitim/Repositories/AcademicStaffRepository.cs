@@ -53,10 +53,10 @@ namespace BilBasarEgitim.Repositories
             _connection.Open();
             string query =
                 "update academicStaffs  " +
-                "set imageUrl=@imageUrl,name=@name,surname=@surname,educatorField=@educatorField,facebookUrl=@facebookUrl," +"twitterUrl=@twitterUrl,instagramUrl=@instagramUrl";
+                "set imageUrl=@imageUrl,name=@name,surname=@surname,educatorField=@educatorField,facebookUrl=@facebookUrl," +"twitterUrl=@twitterUrl,instagramUrl=@instagramUrl where Id=@Id";
             using (MySqlCommand command = new MySqlCommand(query, _connection))
             {
-                
+                command.Parameters.AddWithValue("Id", entity.Id);
                 command.Parameters.AddWithValue("imageUrl", entity.ImageUrl);
                 command.Parameters.AddWithValue("name", entity.Name);
                 command.Parameters.AddWithValue("surname", entity.SurName);

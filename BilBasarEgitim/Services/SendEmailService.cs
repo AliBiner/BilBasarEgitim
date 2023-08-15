@@ -33,15 +33,17 @@ namespace BilBasarEgitim.Services
            
         }
 
-        public void UpdateByEmail(Guid id,string email)
+        public string UpdateByEmail(Guid id,string email)
         {
             try
             {
                 _sendEmail.Update(id, email);
+                return "Güncelleme İşlemi Başarılı";
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                return "İşlem Hatası";
             }
         }
 

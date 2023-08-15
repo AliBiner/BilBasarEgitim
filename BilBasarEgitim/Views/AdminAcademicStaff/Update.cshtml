@@ -32,7 +32,7 @@
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Resim Değiştir</label>
                                 <div class="col-sm-10">
                                     <input type="file" id="fileInput" name="file" accept="image/*">
-
+                                    <span class="error-message" id="fileInput-error"></span>
                                 </div>
                             </div>
 
@@ -43,22 +43,22 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Ad</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" style="width: 50%" value="@Model.Name">
-
+                                    <input type="text" name="name" id="yourName" style="width: 50%" value="@Model.Name">
+                                    <span class="error-message" id="name-error"></span>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Soyad</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="surname" style="width: 50%" value="@Model.SurName">
-
+                                    <input type="text" name="surname" id="yourSurname" style="width: 50%" value="@Model.SurName">
+                                    <span class="error-message" id="surname-error"></span>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label">Eğitim Dalı</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="EducatorField" style="width: 50%" value="@Model.EducatorField">
-
+                                    <input type="text" name="EducatorField" id="educatorfield" style="width: 50%" value="@Model.EducatorField">
+                                    <span class="error-message" id="educator-error"></span>
                                 </div>
                             </div>
                             <div class="row mb-3">

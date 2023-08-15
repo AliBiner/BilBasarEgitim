@@ -29,11 +29,11 @@ namespace BilBasarEgitim.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Add(DocumentAddDto dto ,HttpPostedFileBase document)
+        public ActionResult Add(DocumentAddDto dto)
         {
-            _documentService.Add(dto, document);
+            var result = _documentService.Add(dto, dto.File);
             Response.Cache.SetNoStore();
-            return RedirectToActionPermanent("Index");
+            return Content(result);
         }
 
         [HttpGet]

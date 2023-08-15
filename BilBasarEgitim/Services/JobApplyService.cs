@@ -20,6 +20,10 @@ namespace BilBasarEgitim.Services
             try
             {
                 var cvurl = CustomMethod.CvUpload(cv);
+                if (cvurl == null)
+                {
+                    return "Lütfen Resim Seçiniz.";
+                }
                 var model = CustomMapper.JobAppealAddDtoTo(dto);
                 model.CvUrl = cvurl;
                 _jobApplyRepository.Add(model);
@@ -29,7 +33,8 @@ namespace BilBasarEgitim.Services
             }
             catch (Exception e)
             {
-                return "İşlem Hatası: " + " " +e.Message;
+                Console.WriteLine(e.Message);
+                return "İşlem Hatası";
             }
            
         }

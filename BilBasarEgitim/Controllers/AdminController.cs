@@ -86,8 +86,8 @@ namespace BilBasarEgitim.Controllers
         public ActionResult ProfileUpdate(AdminProfileUpdateDto dto)
         {
             AdminService adminService = new AdminService();
-            adminService.Update(dto);
-            return RedirectToActionPermanent("AdminProfile");
+            var result = adminService.Update(dto);
+            return Content(result);
         }
 
 
@@ -103,7 +103,7 @@ namespace BilBasarEgitim.Controllers
         {
             AdminService adminService = new AdminService();
             var result = adminService.UpdatePassword(dto);
-            return RedirectToActionPermanent("AdminProfile","Admin",new {result = result});
+            return Content(result);
         }
 
     }

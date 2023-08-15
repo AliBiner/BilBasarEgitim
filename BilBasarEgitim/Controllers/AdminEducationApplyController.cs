@@ -38,6 +38,13 @@ namespace BilBasarEgitim.Controllers
             return RedirectToAction("EducationalApply");
         }
         [HttpGet]
+        public ActionResult DeleteApproval(Guid id)
+        {
+            _educationalApplyService.DeleteById(id);
+            Response.Cache.SetNoStore();
+            return RedirectToAction("GetAllApproval");
+        }
+        [HttpGet]
         public ActionResult Approval(Guid id)
         {
             _educationalApplyService.UpdateById(id);
