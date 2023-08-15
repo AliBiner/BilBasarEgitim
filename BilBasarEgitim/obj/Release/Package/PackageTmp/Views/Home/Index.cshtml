@@ -1,0 +1,94 @@
+﻿@model BilBasarEgitim.Models.Dtos.HomeCombineDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<section data-bs-version="5.1" class="slider1 cid-tHf6nDD0s4 " id="slider1-1">
+    @*data-interval="5000" data-bs-interval="5000"*@
+    <div class="carousel slide carousel-fade" id="tL2YTQPxni" data-ride="carousel" data-bs-ride="carousel" data-interval="5000" data-bs-interval="5000">
+        <ol class="carousel-indicators">
+            @for (int i = 0; i < Model.SliderForUserDtos.Count; i++)
+            {
+                if (i == 0)
+                {
+                    <li data-slide-to="@i" data-bs-slide-to="@i" class="active" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
+
+
+                }
+                else
+                {
+                    <li data-slide-to="@i" data-bs-slide-to="@i" class="" data-target="#tL2YTQPxni" data-bs-target="#tL2YTQPxni"></li>
+                }
+
+
+            }
+
+        </ol>
+        <div class="carousel-inner">
+            @{
+                int j = 0;
+            }
+            @foreach (var item in Model.SliderForUserDtos)
+            {
+                <div class="carousel-item slider-image item @(j==0 ? "active":"")">
+                    <div class="item-wrapper">
+                        <img class="d-block w-100" src="~/Upload/Images/Slider/@item.SliderUrl" data-slide-to="@j" data-bs-slide-to="@j">
+                    </div>
+                </div>
+                j++;
+            }
+
+        </div>
+        <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" data-bs-slide="prev" href="#tL2YTQPxni">
+            <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+            <span class="sr-only visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control carousel-control-next" role="button" data-slide="next" data-bs-slide="next" href="#tL2YTQPxni">
+            <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+            <span class="sr-only visually-hidden">Next</span>
+        </a>
+    </div>
+</section>
+
+@{
+    Html.RenderPartial("PartialViews/_NoticeParitalView",Model.NoticeForUserDtos);
+    Html.RenderPartial("PartialViews/_NewsPartialView",Model.NewsForUserDtos);
+}
+
+
+
+<section data-bs-version="5.1" class="video5 cid-tHfCHtWwBr" id="video5-5">
+
+
+
+
+    <div class="container">
+        <div class="title-wrapper mb-5">
+            <h4 class="mbr-section-title mbr-fonts-style mb-0 display-2">
+                <strong>Hakkımızda</strong>
+            </h4>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 video-block">
+                <div class="video-wrapper"><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/lfXzdaswmN0?rel=0&amp;amp;&amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
+
+            </div>
+            <div class="col-12 col-lg">
+                <div class="text-wrapper">
+                    <h3 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5">
+                        <strong>Bilbaşar Eğitim Kurumları</strong>
+                    </h3>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        2018-2019 öğretim yılında, 9. 10. 11. ve 12. sınıflar ve mezun öğrencileri sınavlara hazırlamak, okullarına yardımcı olmak amacıyla kurulmuştur. Kurucumuz Kimya Öğretmeni Bilbaşar Coşkun'dur. Bilbaşar öğretmenimiz, Zafer Dershanelerinde 2002 yılında stajyer olarak başlamış, 2006'da bölüm başkanı, 2010'da da Antalya Zafer Dershanelerinin kurucusu olmuştur. 2015 yılında ise Zafer Kolejini kurmuştur. Sonrasında Birey Özel Öğretim kursunun kuruculuğunu yapmış ve tüm bu birikimlerini Bilbaşar Üniversite Hazırlık Kursu'nda toplamıştır.<br><br><em>Detaylı bilgi için tıklayınız.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@{
+    Html.RenderPartial("PartialViews/_AcademicStaffPartialView",Model.AcademicStaffForUserDtos);
+}
+

@@ -1,0 +1,27 @@
+﻿@model BilBasarEgitim.Models.Dtos.AdminProfileUpdateDto
+<div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+    <!-- Profile Edit Form -->
+    <form action="/Admin/Profil/Guncelle" method="post" id="form-profile-update">
+        <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Ad Soyad</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="fullName" type="text" class="form-control" id="full-name" value="@Session["FullName"].ToString()">
+                <span class="error-message" id="full-name-error"></span>
+            </div>
+        </div>
+        <input type="hidden" name="Id" value="@Guid.Parse(Session["Id"].ToString())"/>
+        <div class="row mb-3">
+            <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="email" type="email" class="form-control" id="yourEmail" value="@Session["Email"].ToString()">
+                <span class="error-message" id="your-email-error"></span>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button id="profile-update" type="submit" class="btn btn-primary">Güncelle</button>
+        </div>
+    </form><!-- End Profile Edit Form -->
+
+</div>

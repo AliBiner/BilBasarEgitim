@@ -1,0 +1,12 @@
+﻿@model List<BilBasarEgitim.Models.Dtos.NoticeForUserDto>
+@{
+    ViewBag.Title = "Duyurular";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@{
+    Html.RenderPartial("PartialViews/_NoticeParitalView",Model);
+}
+
+
+

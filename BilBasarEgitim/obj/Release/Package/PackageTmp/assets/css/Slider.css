@@ -1,0 +1,28 @@
+﻿#tL2YTQPxni {
+    height: 800px;
+}
+
+#tL2YTQPxni img {
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    #tL2YTQPxni {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #tL2YTQPxni {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #tL2YTQPxni {
+        height: 200px;
+    }
+    .carousel-control {
+        display: none;
+    }
+}

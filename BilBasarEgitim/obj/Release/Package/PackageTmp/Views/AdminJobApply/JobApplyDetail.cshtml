@@ -1,0 +1,102 @@
+﻿@model BilBasarEgitim.Models.Dtos.JobApplyDetailDto
+@{
+    ViewBag.Title = "İş Başvuru - Detay";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<main id="main" class="main">
+
+<section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Başvuran Bilgileri</h5>
+
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">Ad Soyad</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.FullName" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" value="@Model.Email" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputNumber" class="col-sm-2 col-form-label">Telefon</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" value="@Model.Phone" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputDate" class="col-sm-2 col-form-label">Yaş</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.Age" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">Çalışma Şekli</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.JobRole" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">Cinsiyet</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.Gender" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">Medeni Hali</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.MartialStatus" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">Uyruk</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.Nationality" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Mezun Olduğu Okullar</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" style="height: 100px" disabled> @Model.GraduateSchool</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">İş Tecrübesi</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" style="height: 100px" disabled>@Model.JobExperience</textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">Başvuru Tarihi</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="@Model.CreateDate" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <a href="/Upload/Cvs/@Model.CvUrl">Cv</a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+          
+        </div>
+    </section>
+
+</main><!-- End #main -->

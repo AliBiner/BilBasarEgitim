@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 10px;">
+        <div class="modal-content">
+            <div class="modal-body" id="errorModalMessage" style="margin: 20px;">
+                <!-- Hata mesajı burada görüntülenecek -->
+            </div>
+        </div>
+    </div>
+</div>
+<main class="main" id="main">
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Haber Yükleme</h5>
+
+
+                        <form action="/admin/haber" method="post" id="news-upload" enctype="multipart/form-data">
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Resim Yükle</label>
+                                <div class="col-sm-10">
+                                    <input type="file" id="fileInput" name="NewsUrl" accept="image/*">
+                                    <span class="error-message" id="fileInput-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2">Önizleme</label>
+                                <img class="col-sm-10" id="imagePreview" src="#" alt="Image Preview" style="max-width: 700px; max-height: 700px; display: none;">
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Açıklama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="description" id="description"  style="width: 100%;">
+                                    <span class="error-message" id="description-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Haber hemen yayınlansın mı?</legend>
+                                <div class="col-sm-10">
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1" name="Check" value="true" checked>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <input type="hidden" name="AdminId" value="@Guid.Parse(Session["Id"].ToString())" />
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+

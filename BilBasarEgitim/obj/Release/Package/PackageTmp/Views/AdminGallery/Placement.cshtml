@@ -1,0 +1,82 @@
+﻿@using BilBasarEgitim.Models.Entities
+@model BilBasarEgitim.Models.Dtos.Gallery.GalleryPlacementWithUiDto
+@{
+    ViewBag.Title = "Palacement";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<main class="main" id="main">
+
+    @using (Html.BeginForm("Placement", "AdminGallery", FormMethod.Post))
+    {
+        <input type="submit" value="Sıralamayı Güncelle"  class="btn btn-primary"/>
+        <section class="section">
+            @{
+                int m = 0;
+            }
+            @for (int i = 0; i < Model.GalleryUi.LineNumber; i++)
+            {
+
+                if (i == Model.GalleryUi.LineNumber - 1)
+                {
+                    <div class="container row col-12 justify-content-center">
+                        @for (int j = 0; j < Model.GalleryUi.DataNumInLastLine; j++)
+                        {
+                            <div class="card col-sm-2 me-5 " style="@(Model.GalleryPlacementDtos[m].Check==false ? "opacity:0.5;" : "")">
+                                <div class="card-body">
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="~/Upload/Images/Gallery/@Model.GalleryPlacementDtos[m].ImageUrl" class="d-block w-100">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title">@Model.GalleryPlacementDtos[m].Description</h5>
+                                    <input type="number" name="PlacementUpdate" value="@Model.GalleryPlacementDtos[m].Placement" style="width: 100%" />
+                                    <input type="hidden" name="GalleryId" value="@Model.GalleryPlacementDtos[m].Id" />
+                                </div>
+                            </div>
+                            m++;
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="container row col-12 justify-content-center">
+                        @for (int k = 0; k < 4; k++)
+                        {
+                            <div class="card col-sm-2 me-5 " style="opacity:  @(Model.GalleryPlacementDtos[m].Check==false ? "0.5" : "1")">
+                                <div class="card-body">
+                                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="~/Upload/Images/Gallery/@Model.GalleryPlacementDtos[m].ImageUrl" class="d-block w-100">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title">@Model.GalleryPlacementDtos[m].Description</h5>
+                                    <input type="number" name="PlacementUpdate" value="@Model.GalleryPlacementDtos[m].Placement" style="width: 100%" />
+                                    <input type="hidden" name="GalleryId" value="@Model.GalleryPlacementDtos[m].Id" />
+                                </div>
+                            </div>
+                            m++;
+                        }
+                    </div>
+                }
+
+
+
+            }
+
+
+        </section>
+
+    }
+
+
+
+
+</main>
+

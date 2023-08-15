@@ -1,0 +1,78 @@
+﻿@model BilBasarEgitim.Models.Dtos.NoticeUpdateDto
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 10px;">
+        <div class="modal-content">
+            <div class="modal-body" id="errorModalMessage" style="margin: 20px;">
+                <!-- Hata mesajı burada görüntülenecek -->
+            </div>
+        </div>
+    </div>
+</div>
+<main class="main" id="main">
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Duyuru Yükleme</h5>
+                        <div class="row mb-3">
+                            <label class="col-sm-2">Mevcut Resim</label>
+                            <img class="col-sm-10" src="~/Upload/Images/Notice/@Model.NoticeUrl" style="max-width: 700px; max-height: 700px;">
+                        </div>
+                        <hr style="border-width: 5px; display: block"/>
+                        <form action="/admin/duyurular/guncelle" method="post" id="notice-update" enctype="multipart/form-data">
+
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Resim Değiştir</label>
+                                <div class="col-sm-10">
+                                    <input type="file" id="fileInput" name="file" accept="image/*">
+                                    <span class="error-message" id="fileInput-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2">Önizleme</label>
+                                <img class="col-sm-10" id="imagePreview" src="#" alt="Image Preview" style="max-width: 700px; max-height: 700px; display: none;">
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Başlık</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="header" id="head" value="@Model.Header">
+                                    <span class="error-message" id="head-error"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Açıklama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="description" id="description" style="width: 100%;" value="@Model.Description">
+                                    <span class="error-message" id="description-error"></span>
+
+                                </div>
+                            </div>
+                            <input type="hidden" name="Id" value="@Model.Id" />
+                            <input type="hidden" name="NoticeUrl" value="@Model.NoticeUrl" />
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+

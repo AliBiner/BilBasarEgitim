@@ -1,0 +1,93 @@
+﻿@model List<BilBasarEgitim.Models.Dtos.Gallery.GalleryForUserDto>
+@{
+    ViewBag.Title = "Galeri";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<section data-bs-version="5.1" class="gallery6 mbr-gallery cid-tHljzNFA9D" id="gallery6-1o">
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-2"><strong>Galeri</strong></h3>
+
+        </div>
+    <div class="row mbr-gallery mt-4">
+        @{
+            int i = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-3 item gallery-image @(i==0 ? "active":"")">
+                <div class="item-wrapper" data-toggle="modal" data-bs-toggle="modal" data-target="#tL2YTfzrcE-modal" data-bs-target="#tL2YTfzrcE-modal">
+                    <img class="w-100" src="~/Upload/Images/Gallery/@item.ImageUrl" data-slide-to="@i" data-bs-slide-to="@i" data-target="#lb-tL2YTfzrcE" data-bs-target="#lb-tL2YTfzrcE">
+                    <div class="icon-wrapper">
+                        <span class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                    </div>
+                </div>
+                <h6 class="mbr-item-subtitle mbr-fonts-style align-center mb-2 mt-2 display-7">@item.Description</h6>
+            </div>
+            i++;
+        }
+
+       
+
+
+    </div>
+
+        <div class="modal mbr-slider" tabindex="-1" role="dialog" aria-hidden="true" id="tL2YTfzrcE-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="carousel slide" id="lb-tL2YTfzrcE" data-ride="carousel" data-bs-ride="carousel" data-interval="4000" data-bs-interval="4000">
+                            <div class="carousel-inner">
+                                @{
+                                    int j = 0;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <div class="carousel-item @(j==0 ? "active":"")">
+                                        <img class="d-block w-100" src="~/Upload/Images/Gallery/@item.ImageUrl" >
+                                    </div>
+                                    j++;
+                                }
+                               
+                              
+
+
+                            </div>
+                            <ol class="carousel-indicators">
+                                @{
+                                    int k = 0;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <li data-slide-to="@k" data-bs-slide-to="@k" class="@(k == 0 ? "active" : "")" data-target="#lb-tL2YTfzrcE" data-bs-target="#lb-tL2YTfzrcE">
+
+                                    </li>
+                                    k++;
+                                }
+
+
+                            </ol>
+                            <a role="button" href="" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
+                            </a>
+                            <a class="carousel-control-prev carousel-control" role="button" data-slide="prev" data-bs-slide="prev" href="#lb-tL2YTfzrcE">
+                                <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+                                <span class="sr-only visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next carousel-control" role="button" data-slide="next" data-bs-slide="next" href="#lb-tL2YTfzrcE">
+                                <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+                                <span class="sr-only visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

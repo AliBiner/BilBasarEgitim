@@ -1,0 +1,86 @@
+﻿@model List<BilBasarEgitim.Models.Dtos.AcademicStaff.AcademicStaffForUserDto>
+
+<section data-bs-version="5.1" class="slider3 mbr-embla cid-tHfEwVxQay" id="slider3-6">
+
+
+
+
+    <div class="position-relative text-center">
+        <div class="col-12">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+                <strong>Kadromuz</strong>
+            </h3>
+
+        </div>
+        <div class="embla" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play-interval="5" data-draggable="true">
+            <div class="embla__viewport container-fluid">
+                <div class="embla__container">
+                    @{
+                        int i = 0;
+                        foreach (var item in Model)
+                        {
+                            <div class="embla__slide slider-image item @(i==0 ? "active":"")" style="margin-left: 1rem; margin-right: 1rem;">
+                                <div class="card-wrap">
+                                    <div class="item-wrapper position-relative">
+                                        <div class="image-wrap">
+                                            <img src="~/Upload/Images/AcademicStaff/@item.ImageUrl" data-slide-to="@i" data-bs-slide-to="@i">
+                                        </div>
+                                    </div>
+                                    <div class="content-wrap">
+                                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
+                                            <strong>@item.FullName</strong>
+                                        </h5>
+
+
+                                        <div class="social-row display-7">
+                                            @if (item.FacebookUrl != "Boş")
+                                            {
+                                                <div class="soc-item">
+                                                    <a href="@item.FacebookUrl" target="_blank">
+                                                        <span class="mbr-iconfont socicon-facebook socicon"></span>
+                                                    </a>
+                                                </div>
+                                            }
+                                           @if (item.TwitterUrl != "Boş")
+                                           {
+                                               <div class="soc-item">
+                                                   <a href="@item.TwitterUrl" target="_blank">
+                                                       <span class="mbr-iconfont socicon-twitter socicon"></span>
+                                                   </a>
+                                               </div>
+                                           }
+                                            @if (item.InstagramUrl != "Boş")
+                                            {
+                                                <div class="soc-item">
+                                                    <a href="@item.InstagramUrl" target="_blank">
+                                                        <span class="mbr-iconfont socicon-instagram socicon"></span>
+                                                    </a>
+                                                </div>
+                                            }
+                                            
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+
+
+                </div>
+            </div>
+            <button class="embla__button embla__button--prev">
+                <span class="mobi-mbri mobi-mbri-arrow-prev mbr-iconfont" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden visually-hidden">Previous</span>
+            </button>
+            <button class="embla__button embla__button--next">
+                <span class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>

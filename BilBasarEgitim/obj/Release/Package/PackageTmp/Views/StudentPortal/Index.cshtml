@@ -1,0 +1,74 @@
+﻿@model List<BilBasarEgitim.Models.Dtos.DocumentPreviewDto>
+@{
+    ViewBag.Title = "Öğrenci Portalı";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<section data-bs-version="5.1" class="content8 cid-tHlm6m7qnV" id="content8-1z">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="counter-container col-md-12 col-lg-10">
+                <div class="mbr-text mbr-fonts-style display-7">
+                    <ul>
+
+                        <main id="main" class="main">
+
+                            <section class="section">
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <!-- Table with stripped rows -->
+                                                <table class="table datatable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Açıklama</th>
+                                                            <th scope="col">Döküman</th>
+                                                            <th scope="col">Yükleme Tarihi</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (Model == null)
+                                                        {
+
+
+                                                        }
+                                                        else
+                                                        {
+
+                                                            int i = 1;
+                                                            foreach (var item in Model)
+                                                            {
+                                                                <tr>
+                                                                    <th scope="row">@i</th>
+                                                                    <td>@item.Description</td>
+                                                                    <td><a href="/Upload/Documents/@item.DocumentUrl"> @item.DocumentUrl</a></td>
+                                                                    <td>@item.CreateDate</td>
+                                                                </tr>
+                                                                i++;
+                                                            }
+                                                        }
+
+
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                        </main>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

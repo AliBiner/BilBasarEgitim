@@ -1,0 +1,59 @@
+﻿@model List<BilBasarEgitim.Models.Dtos.JobApplyPreviewDto>
+@{
+    ViewBag.Title = "Onaylanan İş Başvuruları";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<main id="main" class="main">
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Onaylanan İş Başvuruları</h5>
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ad Soyad</th>
+                                    <th scope="col">Çalışma Şekli</th>
+                                    <th scope="col">Yaş</th>
+                                    <th scope="col">Başvuru Tarihi</th>
+                                    <th scope="col">Detay</th>
+                                    <th scope="col">Reddet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int i = 1;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@i</th>
+                                        <td>@item.FullName</td>
+                                        <td>@item.JobRole</td>
+                                        <td>@item.Age</td>
+                                        <td>@item.CreateDate</td>
+                                        <td><a class="btn btn-primary" href="/admin/is-basvuru/detay/@item.Id">Detay</a></td>
+                                        <td><a class="btn btn-danger" href="/admin/is-basvuru/onaylanan-reddet/@item.Id">Reddet</a></td>
+                                    </tr>
+                                    i++;
+                                }
+
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
